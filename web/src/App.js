@@ -1,11 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Landing from './containers/landing'
+import Routes from './routes'
 
 function App() {
   return (
     <main>
-      <Landing />
+      <Router>
+        <Routes />
+      </Router>
     </main>
   );
 }
