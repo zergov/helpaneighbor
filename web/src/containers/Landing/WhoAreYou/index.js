@@ -7,10 +7,9 @@ function WhoAreYou() {
   const history = useHistory()
 
   function setUserType(userType) {
-    dispatch({ type: "setUserType", userType })
+    dispatch({ type: "LANDING_SET_USER_TYPE", userType })
     if (userType == "unsafe")
       history.push("/landing/what-do-you-need")
-
   }
 
   return (

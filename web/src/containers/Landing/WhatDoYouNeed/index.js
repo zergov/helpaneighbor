@@ -8,7 +8,8 @@ function WhatDoYouNeed() {
   const history = useHistory()
 
   function confirmNeeds() {
-    dispatch({ type: "setNeeds", needs })
+    dispatch({ type: "LANDING_SET_NEEDS", needs })
+    history.push("/landing/where-are-you")
   }
 
   return (

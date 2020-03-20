@@ -7,6 +7,7 @@ import {
 import Home from './containers/Home'
 import WhoAreYou from './containers/Landing/WhoAreYou'
 import WhatDoYouNeed from './containers/Landing/WhatDoYouNeed'
+import WhereAreYou from './containers/Landing/WhereAreYou'
 
 function Routes() {
   return (
@@ -19,6 +20,9 @@ function Routes() {
       </Route>
       <Route exact path="/landing/what-do-you-need">
         <WhatDoYouNeed />
+      </Route>
+      <Route exact path="/landing/where-are-you">
+        <WhereAreYou />
       </Route>
     </Switch>
   )
