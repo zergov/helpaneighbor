@@ -1,17 +1,29 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
+import { useState, useDispatch } from 'react-redux'
 
-function Landing() {
+function WhoAreYou() {
+  const dispatch = useDispatch()
+  const history = useHistory()
+
+  function setUserType(userType) {
+    dispatch({ type: "setUserType", userType })
+    if (userType == "unsafe")
+      history.push("/landing/what-do-you-need")
+
+  }
+
   return (
     <div className="container"style={{ height: "100vh" }}>
       <div className="row h-100">
         <div className="col-sm-12 my-auto">
-          <h1 className="text-center">Who are you?</h1>
-          <button type="button" className="btn btn-outline-primary btn-lg btn-block">Someone seeking for help</button>
-          <button type="button" className="btn btn-outline-primary btn-lg btn-block">Someone wanting to help</button>
+          <h1 className="text-center">What is your situation?</h1>
+          <button type="button" onClick={() => setUserType("unsafe")} className="btn btn-outline-primary btn-lg btn-block">I need help</button>
+          <button type="button" onClick={() => setUserType("safe")} className="btn btn-outline-primary btn-lg btn-block">I want to help</button>
         </div>
       </div>
     </div>
   )
 }
 
-export default Landing
+export default WhoAreYou
