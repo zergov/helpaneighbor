@@ -16,7 +16,7 @@ function WhatDoYouNeed() {
     <div className="container"style={{ height: "100vh" }}>
       <div className="row h-100">
         <div className="col-sm-12 my-auto">
-          <h1 className="text-center">What do you need?</h1>
+          <h1>What do you need?</h1>
           <div className="form-group">
             <textarea className="form-control" rows="5" onChange={e => setNeeds(e.target.value)} value={needs}></textarea>
           </div>

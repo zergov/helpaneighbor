@@ -27,8 +27,8 @@ function ConfirmLocation() {
     <div className="container"style={{ height: "100vh" }}>
       <div className="row h-100">
         <div className="col-sm-12 my-auto">
-          <h1 className="text-center">Is this where you live?</h1>
-          <p className="lead">{ address }</p>
+          <h1>Confirm where you live</h1>
+          <p>{ address }</p>
           <div style={{ height: '300px', width: '100%', margin: 4 }}>
             <GoogleMapReact
               bootstrapURLKeys={{ key: googleApiKey }}

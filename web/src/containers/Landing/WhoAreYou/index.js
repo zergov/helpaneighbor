@@ -16,7 +16,7 @@ function WhoAreYou() {
     <div className="container"style={{ height: "100vh" }}>
       <div className="row h-100">
         <div className="col-sm-12 my-auto">
-          <h1 className="text-center">What is your situation?</h1>
+          <h1>What is your situation?</h1>
           <button type="button" onClick={() => setUserType("unsafe")} className="btn btn-outline-primary btn-lg btn-block">I need help</button>
           <button type="button" onClick={() => setUserType("safe")} className="btn btn-outline-primary btn-lg btn-block">I want to help</button>
         </div>
