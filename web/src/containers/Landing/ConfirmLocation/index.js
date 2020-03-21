@@ -12,7 +12,7 @@ function ConfirmLocation() {
   const googleApiKey = "AIzaSyA1E-jEgtdh_zQX2kHR3arevxr1mnk5TSU"
 
   function yes() {
-    window.alert("done!")
+    history.push("/landing/finish")
   }
 
   function no() {

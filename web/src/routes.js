@@ -9,6 +9,7 @@ import WhoAreYou from './containers/Landing/WhoAreYou'
 import WhatDoYouNeed from './containers/Landing/WhatDoYouNeed'
 import WhereAreYou from './containers/Landing/WhereAreYou'
 import ConfirmLocation from './containers/Landing/ConfirmLocation'
+import Finish from './containers/Landing/Finish'
 
 function Routes() {
   return (
@@ -27,6 +28,9 @@ function Routes() {
       </Route>
       <Route exact path="/landing/confirm-location">
         <ConfirmLocation />
+      </Route>
+      <Route exact path="/landing/finish">
+        <Finish />
       </Route>
     </Switch>
   )
