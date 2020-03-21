@@ -13,9 +13,13 @@ function LocationSearchInput(props) {
 
   async function handleSelect(address) {
     const results = await geocodeByAddress(address)
-    const latLng = await getLatLng(results[0])
+    const geocode = results[0]
+    const latLng = await getLatLng(geocode)
+
+    setAddress(geocode.formatted_address)
+
     if (props.onSelect) {
-      props.onSelect(latLng)
+      props.onSelect({ ...geocode, ...latLng })
     }
   }
 
