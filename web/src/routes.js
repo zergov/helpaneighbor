@@ -8,6 +8,7 @@ import Home from './containers/Home'
 import WhoAreYou from './containers/Landing/WhoAreYou'
 import WhatDoYouNeed from './containers/Landing/WhatDoYouNeed'
 import WhereAreYou from './containers/Landing/WhereAreYou'
+import ConfirmLocation from './containers/Landing/ConfirmLocation'
 
 function Routes() {
   return (
@@ -23,6 +24,9 @@ function Routes() {
       </Route>
       <Route exact path="/landing/where-are-you">
         <WhereAreYou />
+      </Route>
+      <Route exact path="/landing/confirm-location">
+        <ConfirmLocation />
       </Route>
     </Switch>
   )

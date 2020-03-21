@@ -12,14 +12,11 @@ function WhereAreYou() {
   const history = useHistory()
   const googleApiKey = "AIzaSyA1E-jEgtdh_zQX2kHR3arevxr1mnk5TSU"
 
-  function confirmLocation() {
-    dispatch({ type: "LANDING_SET_LOCATION", location })
-  }
-
   async function onAddressSelection(payload) {
     const {lat, lng, formatted_address} = payload
-    setLocation({lat, lng})
-    setAddress(formatted_address)
+    dispatch({ type: "LANDING_SET_COORDS", coords: {lat, lng} })
+    dispatch({ type: "LANDING_SET_ADDRESS", address: formatted_address })
+    history.push("/landing/confirm-location")
   }
 
   return (
@@ -41,7 +38,6 @@ function WhereAreYou() {
                   <div lat={location.lat} lng={location.lng}>You</div>
                 </GoogleMapReact>
               </div>
-              <button type="button" onClick={confirmLocation} className="btn btn-outline-primary btn-lg btn-block">Next</button>
             </div>
           )}
         </div>

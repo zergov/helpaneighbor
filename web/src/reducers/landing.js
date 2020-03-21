@@ -1,6 +1,8 @@
 const initialState = {
   userType: null,
   needs: null,
+  coords: null,
+  address: null,
 }
 
 export default (state = initialState, action) => {
@@ -10,6 +12,12 @@ export default (state = initialState, action) => {
     }
     case "LANDING_SET_NEEDS": {
       return {...state, needs: action.needs}
+    }
+    case "LANDING_SET_COORDS": {
+      return {...state, coords: action.coords}
+    }
+    case "LANDING_SET_ADDRESS": {
+      return {...state, address: action.address}
     }
     default:
       return state
