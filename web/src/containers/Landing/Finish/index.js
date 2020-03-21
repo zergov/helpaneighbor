@@ -14,7 +14,7 @@ function Finish() {
           <h2>Your status</h2>
           <p>You need help</p>
 
-          <h2>Your needs</h2>
+          <h2>What you need</h2>
           <p style={{whiteSpace: "pre"}}>{needs}</p>
 
           <h2>Your location</h2>
