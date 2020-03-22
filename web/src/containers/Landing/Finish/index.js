@@ -5,6 +5,22 @@ function Finish() {
   const needs = useSelector(state => state.landing.needs)
   const address = useSelector(state => state.landing.address)
 
+  async function createHelpRequest() {
+    const response = await fetch("http://localhost:3000/help_requests", {
+      method: "POST",
+      body: JSON.stringify({
+        address,
+        description: needs,
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+
+    const json = await response.json()
+    console.log(json)
+  }
+
   return (
     <div className="container">
       <div className="row">
@@ -20,7 +36,7 @@ function Finish() {
           <h5>Your location</h5>
           <p>{address}</p>
 
-          <button type="button" className="btn btn-outline-primary btn-lg">Confirm</button>
+          <button type="button" onClick={createHelpRequest} className="btn btn-outline-primary btn-lg">Confirm</button>
         </div>
       </div>
     </div>
