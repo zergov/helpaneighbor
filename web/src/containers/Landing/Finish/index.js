@@ -9,15 +9,15 @@ function Finish() {
     <div className="container">
       <div className="row">
         <div className="col-sm-12">
-          <h1>Confirm</h1>
+          <h1>Confirm your information</h1>
 
-          <h2>Your status</h2>
+          <h5>Your status</h5>
           <p>You need help</p>
 
-          <h2>What you need</h2>
+          <h5>What you need</h5>
           <p style={{whiteSpace: "pre"}}>{needs}</p>
 
-          <h2>Your location</h2>
+          <h5>Your location</h5>
           <p>{address}</p>
 
           <button type="button" className="btn btn-outline-primary btn-lg">Confirm</button>
