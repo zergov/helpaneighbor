@@ -1,13 +1,22 @@
+$color_primary: black;
+$color_hover: #bdc3c7;
+
 body {
   padding: 0.8em;
   font-family: Circular, Helvetica, Arial, sans-serif, IosFix;
 }
 
+a {
+  text-decoration: none;
+  color: $color_primary;
+  border-bottom: 1px solid #7f8c8d;
+
+  &:hover {
+    border-bottom: 1px solid $color_primary;
+  }
+}
+
 #main-nav {
   display: flex;
   justify-content: space-between;
-
-  a {
-
-  }
 }
