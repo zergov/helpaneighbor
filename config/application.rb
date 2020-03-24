@@ -11,6 +11,10 @@ module HelpaneighborCa
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    # skip assets and helper when using generators
+    config.generators.stylesheets = false
+    config.generators.helper = false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
