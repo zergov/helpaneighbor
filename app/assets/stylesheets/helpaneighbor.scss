@@ -1,8 +1,10 @@
 $color_primary: black;
 $color_hover: #bdc3c7;
 
+$footer_height: 2.5em;
+
 body {
-  padding: 0.8em;
+  padding: 0 1rem;
   font-family: Circular, Helvetica, Arial, sans-serif, IosFix;
 }
 
@@ -16,7 +18,26 @@ a {
   }
 }
 
+main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $footer_height;
+}
+
 #main-nav {
   display: flex;
+  padding: 0.8rem 0;
   justify-content: space-between;
 }
+
+#container {
+  padding-bottom: $footer_height;
+}
+
