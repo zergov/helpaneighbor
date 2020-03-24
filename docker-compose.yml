@@ -1,5 +1,14 @@
 version: "3.7"
 services:
+  helpaneighbor:
+    build: .
+    ports:
+    - "3000:3000"
+    volumes:
+    - .:/helpaneighbor
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:12.2
     ports:
