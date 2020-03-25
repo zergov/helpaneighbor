@@ -5,7 +5,7 @@ function setAddressCoords({lat, lng}) {
   document.getElementById('address-input-lng').value = lng
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
   const map = initGoogleMap("google-map-container", )
 
   // Create the search box and link it to the UI element.
@@ -42,4 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     map.fitBounds(bounds)
   })
-});
+})();
