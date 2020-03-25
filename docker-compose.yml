@@ -10,7 +10,7 @@ services:
       - postgres
 
   postgres:
-    image: postgres:12.2
+    image: postgis/postgis:12-master
     ports:
       - "5432:5432"
     environment:
