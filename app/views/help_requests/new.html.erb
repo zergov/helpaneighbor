@@ -1,13 +1,74 @@
+<style>
+#map {
+  height: 400px;
+  width: 100%;
+}
+</style>
+
 <h1>Ask for help</h1>
 <%= form_with(model: @help_request, url: :request_help, local: true) do |f| %>
   <%= f.label :name, 'What is your name?' %>
   <%= f.text_field :name %>
 
   <%= f.label :address, 'What is your address?' %>
-  <%= f.text_field :address %>
+  <%= f.text_field :address, id: 'address-input' %>
+
+  <div id="map">
+  </div>
 
   <%= f.label :description, 'What do you need?' %>
   <%= f.text_area :description %>
 
   <%= f.submit 'Create' %>
 <% end %>
+
+<script>
+  function initAutocomplete() {
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -33.8688, lng: 151.2195},
+      zoom: 13,
+      mapTypeId: 'roadmap'
+    });
+
+    // Create the search box and link it to the UI element.
+    const input = document.getElementById('address-input');
+    const searchBox = new google.maps.places.SearchBox(input);
+
+    let marker;
+
+    searchBox.addListener('places_changed', function() {
+      var places = searchBox.getPlaces();
+
+      if (places.length == 0)
+        return;
+
+      const bounds = new google.maps.LatLngBounds()
+      const place = places[0]
+
+      const icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      if (marker) marker.setMap(null)
+      marker = new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+      });
+
+      if (place.geometry.viewport)
+        bounds.union(place.geometry.viewport);
+      else
+        bounds.extend(place.geometry.location);
+
+      map.fitBounds(bounds)
+    })
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E-jEgtdh_zQX2kHR3arevxr1mnk5TSU&libraries=places&callback=initAutocomplete" async defer></script>
