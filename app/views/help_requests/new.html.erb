@@ -1,13 +1,13 @@
 <h1>Ask for help</h1>
-<%= form_with(model: @help_request, url: :request_help) do |f| %>
+<%= form_with(model: @help_request, url: :request_help, local: true) do |f| %>
   <%= f.label :name, 'What is your name?' %>
   <%= f.text_field :name %>
 
-  <%= f.label :name, 'What is your address?' %>
+  <%= f.label :address, 'What is your address?' %>
   <%= f.text_field :address %>
 
-  <%= f.label :name, 'What do you need?' %>
-  <%= f.text_area :address %>
+  <%= f.label :description, 'What do you need?' %>
+  <%= f.text_area :description %>
 
   <%= f.submit 'Create' %>
 <% end %>
