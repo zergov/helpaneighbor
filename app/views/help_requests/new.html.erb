@@ -1,2 +1,13 @@
-<h1>HelpRequests#new</h1>
-<p>Find me in app/views/help_requests/new.html.erb</p>
+<h1>Ask for help</h1>
+<%= form_with(model: @help_request, url: :request_help) do |f| %>
+  <%= f.label :name, 'What is your name?' %>
+  <%= f.text_field :name %>
+
+  <%= f.label :name, 'What is your address?' %>
+  <%= f.text_field :address %>
+
+  <%= f.label :name, 'What do you need?' %>
+  <%= f.text_area :address %>
+
+  <%= f.submit 'Create' %>
+<% end %>

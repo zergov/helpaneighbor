@@ -3,6 +3,8 @@ $color_hover: #bdc3c7;
 
 $footer_height: 2.5em;
 
+* { box-sizing: border-box; }
+
 body {
   padding: 0 1rem;
   font-family: Circular, Helvetica, Arial, sans-serif, IosFix;
@@ -29,6 +31,20 @@ footer {
   bottom: 0;
   width: 100%;
   height: $footer_height;
+}
+
+label, input {
+  display: block;
+}
+
+input[type=text], select, textarea {
+  padding: 0.4em;
+  margin-top: 0.2em;
+  margin-bottom: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  resize: vertical;
 }
 
 #main-nav {
