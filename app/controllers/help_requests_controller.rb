@@ -3,6 +3,10 @@ class HelpRequestsController < ApplicationController
     @help_request = HelpRequest.new
   end
 
+  def show
+    @help_request = HelpRequest.find(params[:id])
+  end
+
   def create
     @help_request = HelpRequest.new(help_request_params)
 
@@ -11,7 +15,7 @@ class HelpRequestsController < ApplicationController
     @help_request.address_lonlat = "POINT(#{longitude} #{latitude})"
 
     if @help_request.save
-      redirect_to :request_help
+      redirect_to @help_request
     else
       render :new
     end
