@@ -5,12 +5,21 @@ class HelpRequestsController < ApplicationController
 
   def create
     @help_request = HelpRequest.new(help_request_params)
-    redirect_to :request_help
+
+    longitude = @help_request.address_lon
+    latitude  = @help_request.address_lat
+    @help_request.address_lonlat = "POINT(#{longitude} #{latitude})"
+
+    if @help_request.save
+      redirect_to :request_help
+    else
+      render :new
+    end
   end
 
   private
 
   def help_request_params
-    params.require(:help_request).permit(:name, :address, :description)
+    params.require(:help_request).permit(:name, :address, :description, :address_lon, :address_lat)
   end
 end
