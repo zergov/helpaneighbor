@@ -12,6 +12,8 @@
 
   <%= f.label :address, 'What is your address?' %>
   <%= f.text_field :address, id: 'address-input' %>
+  <%= f.hidden_field :lat, id: 'address-input-lat' %>
+  <%= f.hidden_field :lng, id: 'address-input-lng' %>
 
   <div id="map">
   </div>
@@ -44,6 +46,9 @@
 
       const bounds = new google.maps.LatLngBounds()
       const place = places[0]
+
+      document.getElementById('address-input-lat').value = place.geometry.location.lat()
+      document.getElementById('address-input-lng').value = place.geometry.location.lng()
 
       const icon = {
         url: place.icon,
