@@ -1,3 +1,10 @@
+<style>
+#google-map-container {
+  height: 400px;
+  width: 100%;
+}
+</style>
+
 <h2>Name of your neighbor </h2>
 <p><%= @help_request.name %></p>
 
@@ -6,3 +13,11 @@
 
 <h2>Address</h2>
 <p><%= @help_request.address %></p>
+
+<div id="google-map-container">
+</div>
+
+<input id="help-request-lat" type="hidden" value="<%= @help_request.address_lat %>">
+<input id="help-request-lon" type="hidden" value="<%= @help_request.address_lon %>">
+
+<%= javascript_pack_tag 'show-help-requests' %>
