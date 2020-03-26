@@ -18,28 +18,11 @@ function infoWindowForRequest(request) {
   let requestsMarkers = {}
   let currentInfoWindow;
 
-  searchBox.addListener('places_changed', async () => {
-    var places = searchBox.getPlaces();
-
-    if (places.length == 0) return;
-
-    const place = places[0]
-    updateMapBounds(map, place)
-
+  async function fetchMarkers(position) {
     const requests = await $.ajax({
       url: "/help-requests.json",
-      data: {
-        lat: place.geometry.location.lat(),
-        lng: place.geometry.location.lng(),
-      },
+      data: position,
     })
-
-    // clear existing markers
-    Object.values(requestsMarkers).forEach(({ marker, infoWindow }) => {
-      marker.setMap(null)
-      infoWindow.close()
-    })
-    requestsMarkers = {}
 
     requests.forEach(request => {
       const position = {
@@ -64,5 +47,39 @@ function infoWindowForRequest(request) {
         }
       }
     })
+  }
+
+  map.addListener('idle', () => {
+    const center = map.getCenter()
+    const bounds = map.getBounds()
+    const ne = bounds.getNorthEast()
+    const sw = bounds.getSouthWest()
+
+    // TODO: only fetch if we make a HUGE change on the map
+    console.log("ne", { lat: ne.lat(), lng: ne.lng() })
+    console.log("sw", { lat: sw.lat(), lng: sw.lng() })
+    fetchMarkers({
+      lat: center.lat(),
+      lng: center.lng(),
+    })
+  })
+
+  searchBox.addListener('places_changed', () => {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) return;
+
+    const place = places[0]
+    const position = {
+      lat: place.geometry.location.lat(),
+      lng: place.geometry.location.lng(),
+    }
+
+    // clear existing markers and clear opened info window
+    requestsMarkers.forEach(({ marker }) => marker.setMap(null))
+    if (currentInfoWindow) currentInfoWindow.close()
+
+    fetchMarkers(position)
+    updateMapBounds(map, place)
   })
 })()
