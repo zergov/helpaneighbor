@@ -76,8 +76,9 @@ function infoWindowForRequest(request) {
     }
 
     // clear existing markers and clear opened info window
-    requestsMarkers.forEach(({ marker }) => marker.setMap(null))
     if (currentInfoWindow) currentInfoWindow.close()
+    Object.values(requestsMarkers).forEach(({ marker }) => marker.setMap(null))
+    requestsMarkers = {}
 
     fetchMarkers(position)
     updateMapBounds(map, place)
