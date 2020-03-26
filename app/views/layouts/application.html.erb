@@ -23,6 +23,10 @@
       </nav>
 
       <div id="container">
+        <% flash.each do |type, msg| %>
+          <div class="flash flash-<%= type %>"><%= msg %></div>
+        <% end %>
+
         <%= yield %>
       </div>
 

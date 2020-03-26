@@ -1,5 +1,4 @@
 $color_text: #222;
-$color_hover: black;
 
 $footer_height: 2.5em;
 
@@ -21,7 +20,7 @@ a {
   border-bottom: 1px solid #7f8c8d;
 
   &:hover {
-    border-bottom: 1px solid $color_hover;
+    border-bottom: 1px solid black;
   }
 }
 
@@ -66,4 +65,19 @@ input[type=text], select, textarea {
 
 .white-spaces {
   white-space: pre;
+}
+
+.flash {
+  border-radius: 4px;
+  padding: 0.8rem;
+}
+
+.flash-notice {
+  background-color: #2ecc71;
+  color: #0a5727;
+}
+
+.flash-alert {
+  background-color: #e74c3c;
+  color: #781a11;
 }
