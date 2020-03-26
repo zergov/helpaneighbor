@@ -1,5 +1,13 @@
 import { initGoogleMap, createHelpRequestMarker, updateMapBounds } from './google-map.js'
 
+function infoWindowForRequest(request) {
+  return `
+  <h2>${request.name}</h2>
+  <p class="white-spaces">${request.description}</p>
+  <a href="/help-requests/${request.id}">help this person</a>
+  `
+}
+
 (async () => {
   const map = initGoogleMap("google-map-container")
 
@@ -8,6 +16,7 @@ import { initGoogleMap, createHelpRequestMarker, updateMapBounds } from './googl
   const searchBox = new google.maps.places.SearchBox(input);
 
   let requestsMarkers = {}
+  let currentInfoWindow;
 
   searchBox.addListener('places_changed', async () => {
     var places = searchBox.getPlaces();
@@ -26,7 +35,10 @@ import { initGoogleMap, createHelpRequestMarker, updateMapBounds } from './googl
     })
 
     // clear existing markers
-    Object.values(requestsMarkers).forEach(({ marker }) => marker.setMap(null))
+    Object.values(requestsMarkers).forEach(({ marker, infoWindow }) => {
+      marker.setMap(null)
+      infoWindow.close()
+    })
     requestsMarkers = {}
 
     requests.forEach(request => {
@@ -36,9 +48,19 @@ import { initGoogleMap, createHelpRequestMarker, updateMapBounds } from './googl
       }
 
       if (!requestsMarkers[request.id]) {
+        const marker = createHelpRequestMarker(map, request.name, position)
+        const infoWindow = new google.maps.InfoWindow({ content: infoWindowForRequest(request) });
+
+        marker.addListener('click', () => {
+          if (currentInfoWindow) currentInfoWindow.close()
+          infoWindow.open(map, marker)
+          currentInfoWindow = infoWindow;
+        })
+
         requestsMarkers[request.id] = {
           request,
-          marker: createHelpRequestMarker(map, request.name, position)
+          marker,
+          infoWindow,
         }
       }
     })
