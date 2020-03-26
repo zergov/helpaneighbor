@@ -1,7 +1,6 @@
 import MapIcons from "./map-icon/map-icons.js"
 
 const defaultPosition = {lat: 45.4945877, lng: -73.5622815}
-console.log(MapIcons.Marker)
 
 export function initGoogleMap(container, center = defaultPosition) {
   return new google.maps.Map(document.getElementById(container), {
