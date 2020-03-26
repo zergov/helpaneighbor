@@ -67,6 +67,10 @@ input[type=text], select, textarea {
   white-space: pre;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .flash {
   border-radius: 4px;
   padding: 0.8rem;

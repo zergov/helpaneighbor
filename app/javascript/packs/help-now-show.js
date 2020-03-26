@@ -2,7 +2,7 @@ import { initGoogleMap, createHelpRequestMarker, updateMapBounds } from './googl
 
 function infoWindowForRequest(request) {
   return `
-  <h2>${request.name}</h2>
+  <h2 class="capitalize">${request.name}</h2>
   <p class="white-spaces">${request.description}</p>
   <a href="/help-requests/${request.id}">help this person</a>
   `
