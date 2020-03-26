@@ -1,30 +1,46 @@
-import { initGoogleMap } from './google-map.js'
+import { initGoogleMap, createMarker, updateMapBounds } from './google-map.js'
 
-(() => {
+(async () => {
   const map = initGoogleMap("google-map-container")
 
   // Create the search box and link it to the UI element.
   const input = document.getElementById('address-input');
   const searchBox = new google.maps.places.SearchBox(input);
 
-  searchBox.addListener('places_changed', () => {
+  let requestsMarkers = {}
+
+  searchBox.addListener('places_changed', async () => {
     var places = searchBox.getPlaces();
 
-    if (places.length == 0)
-      return;
+    if (places.length == 0) return;
 
-    const bounds = new google.maps.LatLngBounds()
     const place = places[0]
-    const position = {
-      lat: place.geometry.location.lat(),
-      lng: place.geometry.location.lng(),
-    }
+    updateMapBounds(map, place)
 
-    if (place.geometry.viewport)
-      bounds.union(place.geometry.viewport);
-    else
-      bounds.extend(position);
+    const requests = await $.ajax({
+      url: "/help-requests.json",
+      data: {
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng(),
+      },
+    })
 
-    map.fitBounds(bounds)
+    // clear existing markers
+    Object.values(requestsMarkers).forEach(({ marker }) => marker.setMap(null))
+    requestsMarkers = {}
+
+    requests.forEach(request => {
+      const requestPosition = {
+        lat: parseFloat(request.address_lat),
+        lng: parseFloat(request.address_lon)
+      }
+
+      if (!requestsMarkers[request.id]) {
+        requestsMarkers[request.id] = {
+          request,
+          marker: createMarker(map, request.name, requestPosition)
+        }
+      }
+    })
   })
 })()

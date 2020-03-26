@@ -25,3 +25,13 @@ export function createMarker(map, title, position) {
   });
 }
 
+export function updateMapBounds(map, place) {
+  const bounds = new google.maps.LatLngBounds()
+  if (place.geometry.viewport)
+    bounds.union(place.geometry.viewport);
+  else
+    bounds.extend(position);
+
+  map.fitBounds(bounds)
+}
+
