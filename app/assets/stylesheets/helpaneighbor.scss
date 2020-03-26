@@ -54,6 +54,8 @@ input[type=text], select, textarea {
 }
 
 #container {
+  max-width: 100rem;
+  margin: 0 auto;
   padding-bottom: $footer_height;
 }
 
