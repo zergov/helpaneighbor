@@ -1,2 +1,15 @@
-<h1>HelpNow#show</h1>
-<p>Find me in app/views/help_now/show.html.erb</p>
+<style>
+#google-map-container {
+  height: 400px;
+  width: 100%;
+}
+</style>
+
+<h1>Help your neigborhood</h1>
+<%= text_field_tag :address, nil, id: 'address-input', placeholder: 'Where do you live?' %>
+
+
+<div id="google-map-container">
+</div>
+
+<%= javascript_pack_tag 'show-help-now' %>
