@@ -27,6 +27,7 @@ class HelpRequestsController < ApplicationController
     @help_request.address_lonlat = "POINT(#{longitude} #{latitude})"
 
     if @help_request.save
+      flash.notice = "Your Help request has been created!"
       redirect_to @help_request
     else
       render :new
