@@ -1,4 +1,4 @@
-import { initGoogleMap, createMarker } from './google-map.js'
+import { initGoogleMap, createHelpRequestMarker } from './google-map.js'
 
 (() => {
   const lat = parseFloat(document.getElementById('help-request-lat').value)
@@ -6,5 +6,6 @@ import { initGoogleMap, createMarker } from './google-map.js'
   const position = {lat, lng}
 
   const map = initGoogleMap("google-map-container", position)
-  const marker = createMarker(map, "something", position)
+  map.setZoom(19)
+  const marker = createHelpRequestMarker(map, "something", position)
 })()

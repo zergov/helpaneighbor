@@ -1,4 +1,7 @@
+import MapIcons from "./map-icon/map-icons.js"
+
 const defaultPosition = {lat: 45.4945877, lng: -73.5622815}
+console.log(MapIcons.Marker)
 
 export function initGoogleMap(container, center = defaultPosition) {
   return new google.maps.Map(document.getElementById(container), {
@@ -8,20 +11,35 @@ export function initGoogleMap(container, center = defaultPosition) {
   });
 }
 
-export function createMarker(map, title, position) {
-  const icon = {
-    url: "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
-    size: new google.maps.Size(71, 71),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(17, 34),
-    scaledSize: new google.maps.Size(25, 25)
-  };
-
-  return new google.maps.Marker({
-    map: map,
-    icon: icon,
+export function createLocationMarker(map, title, position) {
+  return new MapIcons.Marker({
+    map,
+    icon: {
+      path: MapIcons.shapes.MAP_PIN,
+      fillColor: '#e74c3c',
+      fillOpacity: 1,
+      strokeColor: '#000000',
+      strokeWeight: 1,
+    },
     title,
     position,
+	  map_icon_label: '',
+  });
+}
+
+export function createHelpRequestMarker(map, title, position) {
+  return new MapIcons.Marker({
+    map,
+    icon: {
+      path: MapIcons.shapes.SQUARE_ROUNDED,
+      fillColor: '#e74c3c',
+      fillOpacity: 1,
+      strokeColor: '#000000',
+      strokeWeight: 1,
+    },
+    title,
+    position,
+	  map_icon_label: '<span class="map-icon map-icon-wheelchair"></span>',
   });
 }
 

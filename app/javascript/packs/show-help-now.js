@@ -1,4 +1,4 @@
-import { initGoogleMap, createMarker, updateMapBounds } from './google-map.js'
+import { initGoogleMap, createHelpRequestMarker, updateMapBounds } from './google-map.js'
 
 (async () => {
   const map = initGoogleMap("google-map-container")
@@ -30,7 +30,7 @@ import { initGoogleMap, createMarker, updateMapBounds } from './google-map.js'
     requestsMarkers = {}
 
     requests.forEach(request => {
-      const requestPosition = {
+      const position = {
         lat: parseFloat(request.address_lat),
         lng: parseFloat(request.address_lon)
       }
@@ -38,7 +38,7 @@ import { initGoogleMap, createMarker, updateMapBounds } from './google-map.js'
       if (!requestsMarkers[request.id]) {
         requestsMarkers[request.id] = {
           request,
-          marker: createMarker(map, request.name, requestPosition)
+          marker: createHelpRequestMarker(map, request.name, position)
         }
       }
     })
