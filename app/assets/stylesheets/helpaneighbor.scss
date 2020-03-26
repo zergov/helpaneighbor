@@ -1,22 +1,27 @@
-$color_primary: black;
-$color_hover: #bdc3c7;
+$color_text: #222;
+$color_hover: black;
 
 $footer_height: 2.5em;
 
 * { box-sizing: border-box; }
 
 body {
+  color: $color_text;
   padding: 0 1rem;
-  font-family: Circular, Helvetica, Arial, sans-serif, IosFix;
+  font-family: Arial;
+
+  @media (min-width: 768px) {
+    font-size: 1.2em;
+  }
 }
 
 a {
+  color: $color_text;
   text-decoration: none;
-  color: $color_primary;
   border-bottom: 1px solid #7f8c8d;
 
   &:hover {
-    border-bottom: 1px solid $color_primary;
+    border-bottom: 1px solid $color_hover;
   }
 }
 
@@ -54,7 +59,7 @@ input[type=text], select, textarea {
 }
 
 #container {
-  max-width: 100rem;
+  max-width: 80rem;
   margin: 0 auto;
   padding-bottom: $footer_height;
 }
