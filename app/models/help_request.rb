@@ -1,6 +1,13 @@
 class HelpRequest < ApplicationRecord
   serialize :conditions, Array
 
+  validates :name, presence: true
+  validates :address, presence: true
+  validates :description, presence: true
+  validates :address_lon, presence: true
+  validates :address_lat, presence: true
+  validates :conditions, presence: true
+
   scope :within, -> (longitude, latitude, radius_km = 2) {
     where("ST_Distance(address_lonlat, 'POINT(#{longitude} #{latitude})') < #{radius_km * 1000}")
   }

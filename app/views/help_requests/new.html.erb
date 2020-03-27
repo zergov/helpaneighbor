@@ -6,7 +6,7 @@
 </style>
 
 <h1>Ask for help</h1>
-<%= form_with(model: @help_request, local: true) do |f| %>
+<%= form_with(model: @help_request) do |f| %>
   <%= f.label :name, 'What is your name?' %>
   <%= f.text_field :name %>
 
