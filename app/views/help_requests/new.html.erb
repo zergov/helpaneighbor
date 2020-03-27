@@ -1,6 +1,6 @@
 <style>
 #google-map-container {
-  height: 400px;
+  height: 200px;
   width: 100%;
 }
 </style>
@@ -10,15 +10,7 @@
   <%= f.label :name, 'What is your name?' %>
   <%= f.text_field :name %>
 
-  <%= f.label :address, 'What is your address?' %>
-  <%= f.text_field :address, id: 'address-input' %>
-  <%= f.hidden_field :address_lat, id: 'address-input-lat' %>
-  <%= f.hidden_field :address_lon, id: 'address-input-lng' %>
-
-  <div id="google-map-container">
-  </div>
-
-  <%= f.label :conditions, 'Any special conditions?' %>
+  <%= f.label :conditions, 'Do you have any special conditions?' %>
   <%= f.collection_check_boxes(:conditions, special_conditions, :name, :label) do |box| %>
     <div class="special-condition-option">
       <%= box.check_box %>
@@ -28,8 +20,16 @@
     </div>
   <% end %>
 
-  <%= f.label :description, 'Any other informations?' %>
-  <%= f.text_area :description %>
+  <%= f.label :address, 'What is your address?' %>
+  <%= f.text_field :address, id: 'address-input' %>
+  <%= f.hidden_field :address_lat, id: 'address-input-lat' %>
+  <%= f.hidden_field :address_lon, id: 'address-input-lng' %>
+
+  <div id="google-map-container">
+  </div>
+
+  <%= f.label :description, 'What do you need?' %>
+  <%= f.text_area :description, placeholder: "Give some context on your situation, and what you need from your local community.", rows: 5 %>
 
   <%= f.submit 'Create' %>
 <% end %>

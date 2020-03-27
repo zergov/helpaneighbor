@@ -1,5 +1,7 @@
 $color_text: #222;
 
+$inputs_margin_bottom: 0.8em;
+$inputs_margin_top: 0.2em;
 $footer_height: 2.5em;
 
 * { box-sizing: border-box; }
@@ -41,13 +43,20 @@ label, input {
   display: block;
 }
 
-input[type=text], select, textarea {
+#google-map-container {
+  margin-bottom: $inputs_margin_bottom;
+}
+
+input[type=text], select, textarea, {
   padding: 0.4em;
-  margin-top: 0.2em;
-  margin-bottom: 0.8em;
+  margin-top: $inputs_margin_top;
+  margin-bottom: $inputs_margin_bottom;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
+}
+
+textarea {
   resize: vertical;
 }
 
@@ -65,6 +74,8 @@ input[type=text], select, textarea {
 
 .special-condition-option {
   display: inline-block;
+  margin-top: $inputs_margin_top;
+  margin-bottom: $inputs_margin_bottom;
 
   label {
     border: 1px solid #aaa;
@@ -104,7 +115,7 @@ input[type=text], select, textarea {
 }
 
 .white-spaces {
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .capitalize {
