@@ -8,6 +8,15 @@
 <h2>Name</h2>
 <p class="capitalize"><%= @help_request.name %></p>
 
+<% unless @help_request.special_conditions.empty? %>
+  <h2>Special conditions</h2>
+  <% @help_request.special_conditions.each do |condition| %>
+    <div class="special-condition">
+      <span class="<%= condition.icon %>"></span>
+    </div>
+  <% end %>
+<% end %>
+
 <h2>What this person needs</h2>
 <p class="white-spaces"><%= @help_request.description %></p>
 

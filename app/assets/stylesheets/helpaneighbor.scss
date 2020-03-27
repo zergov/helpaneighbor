@@ -89,6 +89,20 @@ input[type=text], select, textarea {
   }
 }
 
+.special-condition {
+  display: inline-block;
+  border: 1px solid #aaa;
+  border-radius: 50px;
+  padding: 10px;
+  background: $color_text;
+  color: white;
+
+  span {
+    display: block;
+    font-size: 2rem;
+  }
+}
+
 .white-spaces {
   white-space: pre;
 }
