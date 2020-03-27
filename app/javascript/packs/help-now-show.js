@@ -23,7 +23,7 @@ function infoWindowForRequest(request) {
 
   async function fetchMarkers(position) {
     const requests = await $.ajax({
-      url: "/help-requests.json",
+      url: "/find-requests.json",
       data: position,
     })
 

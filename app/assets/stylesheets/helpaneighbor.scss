@@ -78,6 +78,11 @@ input[type=submit] {
   }
 }
 
+
+.field_with_errors {
+  border: 1px solid red!important;
+}
+
 #main-nav {
   display: flex;
   padding: 0.8rem 0;

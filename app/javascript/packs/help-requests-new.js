@@ -9,7 +9,7 @@ function setAddressCoords({lat, lng}) {
   const map = initGoogleMap("google-map-container", )
 
   // Create the search box and link it to the UI element.
-  const input = document.getElementById('address-input');
+  const input = document.getElementById('help_request_address');
   const searchBox = new google.maps.places.SearchBox(input);
 
   // marker on the map

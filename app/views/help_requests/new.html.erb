@@ -6,7 +6,7 @@
 </style>
 
 <h1>Ask for help</h1>
-<%= form_with(model: @help_request) do |f| %>
+<%= form_with(model: @help_request, url: :help_requests, local: true) do |f| %>
   <%= f.label :name, 'What is your name?' %>
   <%= f.text_field :name %>
 
@@ -21,7 +21,7 @@
   <% end %>
 
   <%= f.label :address, 'What is your address?' %>
-  <%= f.text_field :address, id: 'address-input' %>
+  <%= f.text_field :address %>
   <%= f.hidden_field :address_lat, id: 'address-input-lat' %>
   <%= f.hidden_field :address_lon, id: 'address-input-lng' %>
 

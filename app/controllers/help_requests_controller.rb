@@ -1,16 +1,4 @@
 class HelpRequestsController < ApplicationController
-  def index
-    if params.key?(:lat) && params.key?(:lng)
-      @help_requests = HelpRequest.within(params[:lng], params[:lat])
-    else
-      @help_requests = []
-    end
-
-    respond_to do |format|
-      format.json { render json: @help_requests }
-    end
-  end
-
   def new
     @help_request = HelpRequest.new
   end
@@ -31,6 +19,18 @@ class HelpRequestsController < ApplicationController
       redirect_to @help_request
     else
       render :new
+    end
+  end
+
+  def find
+    if params.key?(:lat) && params.key?(:lng)
+      @help_requests = HelpRequest.within(params[:lng], params[:lat])
+    else
+      @help_requests = []
+    end
+
+    respond_to do |format|
+      format.json { render json: @help_requests }
     end
   end
 
