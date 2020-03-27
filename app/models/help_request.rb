@@ -7,6 +7,8 @@ class HelpRequest < ApplicationRecord
   validates :address_lon, presence: true
   validates :address_lat, presence: true
   validates :conditions, presence: true
+  validates :security_question, presence: true
+  validates :security_question_answer, presence: true
 
   scope :within, -> (longitude, latitude, radius_km = 2) {
     where("ST_Distance(address_lonlat, 'POINT(#{longitude} #{latitude})') < #{radius_km * 1000}")

@@ -37,6 +37,6 @@ class HelpRequestsController < ApplicationController
   private
 
   def help_request_params
-    params.require(:help_request).permit(:name, :address, :description, :address_lon, :address_lat, conditions: [])
+    params.require(:help_request).permit(:name, :address, :description, :address_lon, :address_lat, :security_question, :security_question_answer, conditions: [])
   end
 end

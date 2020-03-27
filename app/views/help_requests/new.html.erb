@@ -34,6 +34,14 @@
   <%= error_message_for(@help_request, :description) %>
   <%= f.text_area :description, placeholder: "Give some context on your situation, and what you need from your local community.", rows: 5 %>
 
+  <%= f.label :security_question, 'Choose a security question'%>
+  <%= f.select :security_question, security_questions %>
+  <%= f.text_field :security_question_answer, placeholder: "answer" %>
+  <p>
+    Why a security question?<br>
+    <small>We want you to be able to update this request in the future, without you having to create an account. If for some reason we cannot identify you, we will ask you this question.</small>
+  </p>
+
   <%= f.submit 'Create' %>
 <% end %>
 
