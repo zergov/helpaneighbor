@@ -10,4 +10,16 @@ class HelpRequest < ApplicationRecord
       conditions.include?(condition.name)
     end
   end
+
+  def as_json(options = {})
+    {
+      id: id,
+      name: name,
+      description: description,
+      address: address,
+      address_lat: address_lat,
+      address_lon: address_lon,
+      conditions: special_conditions,
+    }
+  end
 end

@@ -31,7 +31,8 @@ function infoWindowForRequest(request) {
       }
 
       if (!requestsMarkers[request.id]) {
-        const marker = createHelpRequestMarker(map, request.name, position)
+        const conditionIcon = request.conditions.length > 0 ? request.conditions[0].icon : null;
+        const marker = createHelpRequestMarker(map, request.name, position, conditionIcon)
         const infoWindow = new google.maps.InfoWindow({ content: infoWindowForRequest(request) });
 
         marker.addListener('click', () => {
