@@ -28,19 +28,20 @@ export function createLocationMarker(map, title, position) {
 
 const CONDITION_COLOR = '#e74c3c'
 const NO_CONDITION_COLOR = '#f39c12'
-export function createHelpRequestMarker(map, title, position, mapIcon) {
+export function createHelpRequestMarker(map, title, position, conditions) {
+  const icon = conditions.length > 0 ? conditions[0].icon : null;
   return new MapIcons.Marker({
     map,
     icon: {
       path: MapIcons.shapes.SQUARE_ROUNDED,
-      fillColor: mapIcon ? CONDITION_COLOR : NO_CONDITION_COLOR,
+      fillColor: icon ? CONDITION_COLOR : NO_CONDITION_COLOR,
       fillOpacity: 1,
       strokeColor: '#000000',
       strokeWeight: 1,
     },
     title,
     position,
-	  map_icon_label: `<span class="${mapIcon || "map-icon map-icon-unisex"}"></span>`,
+	  map_icon_label: `<span class="${icon || "map-icon map-icon-unisex"}"></span>`,
   });
 }
 

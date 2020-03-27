@@ -2,9 +2,12 @@ import { initGoogleMap, createHelpRequestMarker, updateMapBounds } from './googl
 
 function infoWindowForRequest(request) {
   return `
-  <h2 class="capitalize">${request.name}</h2>
-  <p class="white-spaces">${request.description}</p>
-  <a href="/help-requests/${request.id}">help this person</a>
+  <div class="info-window">
+    <h2 class="capitalize">${request.name}</h2>
+    <strong>${request.address}</strong>
+    <p class="white-spaces">${request.description}</p>
+    <a href="/help-requests/${request.id}">more info</a>
+  </div>
   `
 }
 
@@ -31,8 +34,7 @@ function infoWindowForRequest(request) {
       }
 
       if (!requestsMarkers[request.id]) {
-        const conditionIcon = request.conditions.length > 0 ? request.conditions[0].icon : null;
-        const marker = createHelpRequestMarker(map, request.name, position, conditionIcon)
+        const marker = createHelpRequestMarker(map, request.name, position, request.conditions)
         const infoWindow = new google.maps.InfoWindow({ content: infoWindowForRequest(request) });
 
         marker.addListener('click', () => {

@@ -29,4 +29,8 @@
 <input id="help-request-lat" type="hidden" value="<%= @help_request.address_lat %>">
 <input id="help-request-lon" type="hidden" value="<%= @help_request.address_lon %>">
 
+<script id="help-request-conditions" type="application/json">
+<%= raw(@help_request.special_conditions.to_json) %>
+</script>
+
 <%= javascript_pack_tag 'help-requests-show' %>
