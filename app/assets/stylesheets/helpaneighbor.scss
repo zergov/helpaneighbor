@@ -80,7 +80,13 @@ input[type=submit] {
 
 
 .field_with_errors {
-  border: 1px solid red!important;
+  input, textarea {
+    border: 1px solid red!important;
+  }
+}
+
+.input-error-message {
+  color: red;
 }
 
 #main-nav {
