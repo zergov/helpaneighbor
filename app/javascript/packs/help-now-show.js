@@ -49,19 +49,36 @@ function infoWindowForRequest(request) {
     })
   }
 
+  let pnorth, psouth, peast, pwest, pzoom;
   map.addListener('idle', () => {
     const center = map.getCenter()
-    const bounds = map.getBounds()
-    const ne = bounds.getNorthEast()
-    const sw = bounds.getSouthWest()
-
-    // TODO: only fetch if we make a HUGE change on the map
-    console.log("ne", { lat: ne.lat(), lng: ne.lng() })
-    console.log("sw", { lat: sw.lat(), lng: sw.lng() })
-    fetchMarkers({
+    const zoom = map.getZoom()
+    const position = {
       lat: center.lat(),
       lng: center.lng(),
-    })
+    }
+
+    // Only fetch markers if
+    //    - the map just got initialized
+    //    - the user moved out of the previous bounding box on his map
+    //    - the user changed the zoom on the map
+    const notInitialized = [pnorth, psouth, peast, pwest].some(c => c == null)
+    const zoomChanged = zoom !== pzoom
+    const outEast = position.lat > pwest && position.lat > peast
+    const outWest = position.lat < pwest && position.lat < peast
+    const outNorth = position.lng > pnorth && position.lng > psouth
+    const outSouth = position.lng < pnorth && position.lng < psouth
+
+    if (notInitialized || zoomChanged || outEast || outWest || outNorth || outSouth) {
+      fetchMarkers(position)
+
+      const bounds = map.getBounds()
+      const ne = bounds.getNorthEast()
+      const sw = bounds.getSouthWest()
+      pnorth = ne.lng(); psouth = sw.lng()
+      peast = ne.lat(); pwest = sw.lat()
+      pzoom = zoom
+    }
   })
 
   searchBox.addListener('places_changed', () => {
