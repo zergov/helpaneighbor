@@ -63,6 +63,32 @@ input[type=text], select, textarea {
   padding-bottom: $footer_height;
 }
 
+.special-condition-option {
+  display: inline-block;
+
+  label {
+    border: 1px solid #aaa;
+    border-radius: 50px;
+    padding: 10px;
+    display: block;
+    cursor: pointer;
+
+    span {
+      display: block;
+      font-size: 2rem;
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  :checked + label{
+    background: black;
+    color: white;
+  }
+}
+
 .white-spaces {
   white-space: pre;
 }

@@ -3,10 +3,6 @@
   height: 400px;
   width: 100%;
 }
-#conditions-block {
-  display: flex;
-  flex-direction: row;
-}
 </style>
 
 <h1>Ask for help</h1>
@@ -23,14 +19,14 @@
   </div>
 
   <%= f.label :conditions, 'Any special conditions?' %>
-  <div id="conditions-block">
   <%= f.collection_check_boxes(:conditions, special_conditions, :name, :label) do |box| %>
-    <%= box.label do %>
-      <span class="<%= box.object.icon %>"></span>
-    <% end %>
-    <%= box.check_box %>
+    <div class="special-condition-option">
+      <%= box.check_box %>
+      <%= box.label do %>
+        <span class="<%= box.object.icon %>"></span>
+      <% end %>
+    </div>
   <% end %>
-  </div>
 
   <%= f.label :description, 'Any other informations?' %>
   <%= f.text_area :description %>
