@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get   '/help-requests/:id', to: 'help_requests#show', as: :help_request
   get   '/help-requests/:id/edit', to: 'help_requests#edit', as: :edit_help_request
   patch '/help-requests/:id/edit', to: 'help_requests#update'
-
+  get   '/help-requests/:id/confirm-security-number', to: 'help_requests#ask_security_number', as: :help_request_confirm_security_number
+  post  '/help-requests/:id/confirm-security-number', to: 'help_requests#confirm_security_number'
   get '/find-requests', to: 'help_requests#find'
 
   get '/help-now', to: 'help_now#show'

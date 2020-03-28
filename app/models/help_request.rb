@@ -29,6 +29,14 @@ class HelpRequest < ApplicationRecord
     security_number.chars.each_slice(3).map(&:join).join(' ')
   end
 
+  def is_owner?(uuid)
+    creator_uuid == uuid
+  end
+
+  def validate_security_number(submitted_number)
+    security_number == submitted_number
+  end
+
   def as_json(options = {})
     {
       id: id,

@@ -1,0 +1,7 @@
+<h1>Verify security number</h1>
+<p>For some reason, we cannot verify that you are the creator of this help request. <br/>When you created it, we showed you a <strong>security number</strong>. Please enter it here.</p>
+<%= form_with(local: true) do |f| %>
+  <%= f.label :security_number %>
+  <%= f.text_field :security_number, placeholder: "Enter the 6 digits security number" %>
+  <%= f.submit :submit %>
+<% end %>

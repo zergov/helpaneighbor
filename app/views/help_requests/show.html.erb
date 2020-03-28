@@ -26,6 +26,8 @@
 <div id="google-map-container">
 </div>
 
+<%= link_to "edit this request", edit_help_request_path(:id => @help_request.id) %>
+
 <input id="help-request-lat" type="hidden" value="<%= @help_request.address_lat %>">
 <input id="help-request-lon" type="hidden" value="<%= @help_request.address_lon %>">
 

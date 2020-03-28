@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  address: MyString
-  description: MyString
-
-two:
-  name: MyString
-  address: MyString
-  description: MyString
+monique_request:
+  name: Monique
+  address: "123 rue qqpart"
+  description: "pls halp"
+  address_lat: 45.123
+  address_lon: -73.123
+  conditions: "[]"
+  security_number: "123321"
+  creator_uuid: "f32b5d33-a141-4ffb-b848-bb9381ba078f"
