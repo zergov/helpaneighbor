@@ -8,7 +8,6 @@
 <h1>Ask for help</h1>
 <%= form_with(model: @help_request, url: :help_requests, local: true) do |f| %>
   <%= f.label :name, 'What is your name?' %>
-  <%= error_message_for(@help_request, :name) %>
   <%= f.text_field :name %>
 
   <%= f.label :conditions, 'Do you have any special conditions?' %>
@@ -22,7 +21,6 @@
   <% end %>
 
   <%= f.label :address, 'What is your address?' %>
-  <%= error_message_for(@help_request, :address) %>
   <%= f.text_field :address %>
   <%= f.hidden_field :address_lat, id: 'address-input-lat' %>
   <%= f.hidden_field :address_lon, id: 'address-input-lng' %>
@@ -31,7 +29,6 @@
   </div>
 
   <%= f.label :description, 'What do you need?' %>
-  <%= error_message_for(@help_request, :description) %>
   <%= f.text_area :description, placeholder: "Give some context on your situation, and what you need from your local community.", rows: 5 %>
 
   <%= f.label :security_question, 'Choose a security question'%>

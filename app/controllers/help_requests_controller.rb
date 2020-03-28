@@ -18,6 +18,7 @@ class HelpRequestsController < ApplicationController
       flash.notice = "Your Help request has been created!"
       redirect_to @help_request
     else
+      flash.alert = "Please, fill all the fields."
       render :new
     end
   end
