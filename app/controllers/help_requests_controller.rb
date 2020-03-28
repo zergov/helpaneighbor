@@ -8,6 +8,16 @@ class HelpRequestsController < ApplicationController
   end
 
   def edit
+    @help_request = HelpRequest.find(params[:id])
+  end
+
+  def update
+    @help_request = HelpRequest.find(params[:id])
+    if @help_request.update(help_request_params)
+      redirect_to @help_request
+    else
+      render :edit
+    end
   end
 
   def create

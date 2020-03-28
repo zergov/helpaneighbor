@@ -2,9 +2,9 @@ import MapIcons from "./map-icon/map-icons.js"
 
 const defaultPosition = {lat: 45.4945877, lng: -73.5622815}
 
-export function initGoogleMap(container, center = defaultPosition) {
+export function initGoogleMap(container, center) {
   return new google.maps.Map(document.getElementById(container), {
-    center,
+    center: center || defaultPosition,
     zoom: 15,
     mapTypeId: 'roadmap'
   });

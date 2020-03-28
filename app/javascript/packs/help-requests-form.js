@@ -5,8 +5,21 @@ function setAddressCoords({lat, lng}) {
   document.getElementById('address-input-lng').value = lng
 }
 
+function getRequestPosition() {
+  const lat = document.getElementById('address-input-lat').value
+  const lng = document.getElementById('address-input-lng').value
+
+  if (lat && lng) {
+    return {
+      lat: parseFloat(document.getElementById('address-input-lat').value),
+      lng: parseFloat(document.getElementById('address-input-lng').value),
+    }
+  }
+}
+
 (() => {
-  const map = initGoogleMap("google-map-container", )
+  const requestPosition = getRequestPosition();
+  const map = initGoogleMap("google-map-container", requestPosition)
 
   // Create the search box and link it to the UI element.
   const input = document.getElementById('help_request_address');
@@ -14,6 +27,11 @@ function setAddressCoords({lat, lng}) {
 
   // marker on the map
   let marker;
+
+  if (requestPosition) {
+    const address = document.getElementById('help_request_address').value
+    marker = createLocationMarker(map, address, requestPosition)
+  }
 
   searchBox.addListener('places_changed', () => {
     var places = searchBox.getPlaces();
