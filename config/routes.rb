@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   patch '/help-requests/:id/edit', to: 'help_requests#update'
   get   '/help-requests/:id/confirm-security-number', to: 'help_requests#ask_security_number', as: :help_request_confirm_security_number
   post  '/help-requests/:id/confirm-security-number', to: 'help_requests#confirm_security_number'
-  get '/find-requests', to: 'help_requests#find'
 
   get '/help-now', to: 'help_now#show'
+  get '/help-now/search', to: 'help_now#search'
 end
