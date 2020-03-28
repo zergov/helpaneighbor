@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_233020) do
+ActiveRecord::Schema.define(version: 2020_03_28_214959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_233020) do
     t.string "conditions"
     t.string "security_question"
     t.string "security_question_answer"
+    t.string "security_number"
   end
 
 end

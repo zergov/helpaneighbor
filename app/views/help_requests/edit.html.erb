@@ -8,6 +8,7 @@
 <h1>Edit your help request</h1>
 <%= form_with(model: @help_request, url: :edit_help_request, local: true) do |f| %>
   <%= render partial: 'form', locals: {f: f} %>
+  <%= f.submit 'Edit' %>
 <% end %>
 
 <%= javascript_pack_tag 'help-requests-form' %>

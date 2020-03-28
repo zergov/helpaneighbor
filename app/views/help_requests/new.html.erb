@@ -8,6 +8,14 @@
 <h1>Ask for help</h1>
 <%= form_with(model: @help_request, url: :new_help_request, local: true) do |f| %>
   <%= render partial: 'form', locals: {f: f} %>
+
+  <%= f.hidden_field :security_number %>
+  <h3>Security number</h3>
+  <p>This is the security number for this Help request. It allows you to update this request in the future, without having to create an account.</p>
+  <code><%= @help_request.pretty_security_number %></code>
+  <p>In brief, if you know this number, we can verify that you are the owner of this request. Keep it somewhere safe!</p>
+
+  <%= f.submit 'Create' %>
 <% end %>
 
 <%= javascript_pack_tag 'help-requests-form' %>

@@ -81,6 +81,11 @@ input[type=submit] {
   }
 }
 
+code {
+  padding: 0.8rem;
+  font-size: 2rem!important;
+  background: #fffbdd;
+}
 
 .field_with_errors {
   input, textarea {

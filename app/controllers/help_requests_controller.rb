@@ -1,6 +1,7 @@
 class HelpRequestsController < ApplicationController
   def new
     @help_request = HelpRequest.new
+    @help_request.security_number = HelpRequest.generate_security_number
   end
 
   def show
@@ -13,7 +14,7 @@ class HelpRequestsController < ApplicationController
 
   def update
     @help_request = HelpRequest.find(params[:id])
-    if @help_request.update(help_request_params)
+    if @help_request.update(help_request_params_update)
       redirect_to @help_request
     else
       render :edit
@@ -21,7 +22,7 @@ class HelpRequestsController < ApplicationController
   end
 
   def create
-    @help_request = HelpRequest.new(help_request_params)
+    @help_request = HelpRequest.new(help_request_params_create)
 
     longitude = @help_request.address_lon
     latitude  = @help_request.address_lat
@@ -50,7 +51,11 @@ class HelpRequestsController < ApplicationController
 
   private
 
-  def help_request_params
-    params.require(:help_request).permit(:name, :address, :description, :address_lon, :address_lat, :security_question, :security_question_answer, conditions: [])
+  def help_request_params_create
+    params.require(:help_request).permit(:name, :address, :description, :address_lon, :address_lat, :security_number, conditions: [])
+  end
+
+  def help_request_params_update
+    params.require(:help_request).permit(:name, :address, :description, :address_lon, :address_lat, conditions: [])
   end
 end
