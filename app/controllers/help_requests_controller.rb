@@ -7,6 +7,9 @@ class HelpRequestsController < ApplicationController
     @help_request = HelpRequest.find(params[:id])
   end
 
+  def edit
+  end
+
   def create
     @help_request = HelpRequest.new(help_request_params)
 
