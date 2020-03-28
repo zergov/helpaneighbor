@@ -40,6 +40,9 @@ footer {
   bottom: 0;
   width: 100%;
   height: $footer_height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 label, input {
