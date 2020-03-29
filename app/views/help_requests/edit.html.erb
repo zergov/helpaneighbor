@@ -5,7 +5,7 @@
 }
 </style>
 
-<h1><%= t('help_requests_edit.') %></h1>
+<h1><%= t('help_requests_edit.title') %></h1>
 <%= form_with(model: @help_request, url: :edit_help_request, local: true) do |f| %>
   <%= render partial: 'form', locals: {f: f} %>
   <%= f.submit t('edit') %>
