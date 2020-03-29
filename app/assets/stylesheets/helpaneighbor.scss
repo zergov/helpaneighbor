@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap');
+
 $color_text: #222;
 $color_success: #2ecc71;
 $color_danger: #e74c3c;
@@ -11,7 +13,7 @@ $footer_height: 2.5em;
 body {
   color: $color_text;
   padding: 0 1rem;
-  font-family: Arial;
+  font-family: 'Baloo Thambi 2', cursive;
   line-height: 1.2;
 
   @media (min-width: 768px) {
