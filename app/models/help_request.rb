@@ -6,8 +6,6 @@ class HelpRequest < ApplicationRecord
   validates :description, presence: true
   validates :conditions, presence: true
   validates :security_number, presence: true, numericality: { only_integer: true }, length: { is: 6 }
-  # validates :security_question, presence: true
-  # validates :security_question_answer, presence: true
 
   validate :validate_address_has_coordinates
 
