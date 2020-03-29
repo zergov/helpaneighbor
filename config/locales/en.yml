@@ -65,6 +65,9 @@ en:
     title: "Ask for help"
     security_number_description: "This is the security number for this Help request. It allows you to update this request in the future, without having to create an account."
     security_number_tldr: "In brief, if you know this number, we can verify that you are the owner of this request. Keep it somewhere safe!"
+    invalid_address: "The address is invalid"
+    flash_created_success: "Your Help request has been created!"
+    flash_creation_error: "Please, fill all the fields."
 
   help_requests_show:
     name: "Name"
@@ -87,3 +90,4 @@ en:
     title: "Verify security number"
     description_html: "For some reason, we cannot verify that you are the creator of this help request. <br/>When you created it, we showed you a <strong>security number</strong>. Please enter it here."
     enter_security_number: "Enter the 6 digits security number"
+    flash_error: "wrong security number"

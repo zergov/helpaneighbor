@@ -27,10 +27,10 @@ class HelpRequestsController < ApplicationController
 
     if @help_request.valid? && @help_request.save
       set_creator_uuid_cookie(@help_request)
-      flash.notice = "Your Help request has been created!"
+      flash.notice = I18n.t("help_requests_new.flash_created_success")
       redirect_to @help_request
     else
-      flash.alert = "Please, fill all the fields."
+      flash.alert = I18n.t("help_requests_new.flash_creation_error")
       render :new
     end
   end
@@ -43,7 +43,7 @@ class HelpRequestsController < ApplicationController
       set_creator_uuid_cookie(@help_request)
       redirect_to edit_help_request_path(id: @help_request.id)
     else
-      flash.alert = "wrong security number"
+      flash.alert = I18n.t("help_requests_ask_security_number.flash_error")
       render :ask_security_number
     end
   end

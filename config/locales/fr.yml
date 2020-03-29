@@ -34,6 +34,9 @@ fr:
     title: "Demandez de l'aide"
     security_number_description: "Ceci est le numéro de sécurité pour votre demande d'aide. Ce numéro vous permet de modifier votre requête dans le future, sans avoir à vous demander de créer un compte."
     security_number_tldr: "En bref, si vous connaissez ce numéro, on peut vérifier que vous êtes le créateur de cette requête. N'oubliez pas ce numéro!"
+    invalid_address: "L'addresse est invalide"
+    flash_created_success: "Votre requête a été créé!"
+    flash_creation_error: "Veuillez remplir tous les champs."
 
   help_requests_show:
     name: "Nom de la personne"
@@ -56,4 +59,4 @@ fr:
     title: "Vérification nécéssaire"
     description_html: "Nous ne pouvons vérifier que vous êtes l'auteur de cette requête. <br/>Quand vous avez créé votre requête, nous vous avons montré un <strong>numéro de sécurité</strong>. Veuillez l'entrer ici."
     enter_security_number: "Entrer le numéro de sécurité à 6 chiffres."
-
+    flash_error: "Mauvais numéro de sécurité"

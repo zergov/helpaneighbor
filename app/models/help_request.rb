@@ -57,8 +57,9 @@ class HelpRequest < ApplicationRecord
 
   def validate_address_has_coordinates
     if address_lat.blank? || address_lon.blank?
-      errors.add(:address_coordinates, "invalid address")
-      errors.add(:address, "invalid address")
+      error = I18n.t("help_requests_new.invalid_address")
+      errors.add(:address_coordinates, error)
+      errors.add(:address, error)
     end
   end
 end
