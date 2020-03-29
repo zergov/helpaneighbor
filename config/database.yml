@@ -86,3 +86,4 @@ production:
   database: helpaneighbor_ca_production
   username: helpaneighbor_ca
   password: <%= ENV['HELPANEIGHBOR_CA_DATABASE_PASSWORD'] %>
+  host: <%= ENV['HELPANEIGHBOR_CA_DATABASE_HOST'] %>
