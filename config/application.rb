@@ -21,5 +21,8 @@ module HelpaneighborCa
     # the framework and any gems in your application.
     #
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    # supported locales
+    config.available_locales = %w(en fr)
   end
 end

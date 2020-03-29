@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#show', as: :homepage
 
+  get   'languages', to: 'languages#index', as: :choose_language
+
   get   '/help-requests', to: 'help_requests#new', as: :new_help_request
   post  '/help-requests', to: 'help_requests#create'
   get   '/help-requests/:id', to: 'help_requests#show', as: :help_request

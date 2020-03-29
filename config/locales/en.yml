@@ -39,6 +39,9 @@ en:
     i_need_help: "I need help"
     i_want_to_help: "I want to help"
 
+  footer:
+    change_language: "Change language"
+
   home:
     title: "Help your neighbor"
     site_description: "Because of COVID-19, social distancing is required pretty much everywhere. Some quarantined people are stuck home, and might need help. This website lets you ask for help in your local community."

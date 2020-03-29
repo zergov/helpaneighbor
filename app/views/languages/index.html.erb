@@ -1,0 +1,10 @@
+<div id="language-selection">
+  <%= image_tag "around-the-world.svg", class: 'hero-image' %>
+  <%= link_to choose_language_path(locale: 'en') do %>
+    <%= image_tag "flags/en.png", class: 'flag-img' %> English
+  <% end %>
+
+  <%= link_to choose_language_path(locale: 'fr') do %>
+    <%= image_tag "flags/fr.png", class: 'flag-img' %> Français
+  <% end %>
+</div>

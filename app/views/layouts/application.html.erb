@@ -30,7 +30,10 @@
         <%= yield %>
       </div>
 
-      <footer>helpaneighbor.ca</footer>
+      <footer>
+        <div>helpaneighbor.ca</div>
+        <div><%= link_to t("footer.change_language"), :choose_language %></div>
+      </footer>
     </main>
   </body>
 </html>
