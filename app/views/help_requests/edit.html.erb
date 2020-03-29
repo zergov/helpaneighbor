@@ -5,10 +5,10 @@
 }
 </style>
 
-<h1>Edit your help request</h1>
+<h1><%= t('help_requests_edit.') %></h1>
 <%= form_with(model: @help_request, url: :edit_help_request, local: true) do |f| %>
   <%= render partial: 'form', locals: {f: f} %>
-  <%= f.submit 'Edit' %>
+  <%= f.submit t('edit') %>
 <% end %>
 
 <%= javascript_pack_tag 'help-requests-form' %>

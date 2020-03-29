@@ -1,7 +1,7 @@
-<%= f.label :name, 'What is your name?' %>
+<%= f.label :name, t('help_requests_form.what_is_your_name') %>
 <%= f.text_field :name %>
 
-<%= f.label :conditions, 'Do you have any special conditions?' %>
+<%= f.label :conditions, t('help_requests_form.do_you_have_conditions') %>
 <%= f.collection_check_boxes(:conditions, SpecialCondition.default_conditions, :name, :label) do |box| %>
   <div class="special-condition-option">
     <%= box.check_box %>
@@ -11,7 +11,7 @@
   </div>
 <% end %>
 
-<%= f.label :address, 'What is your address?' %>
+<%= f.label :address, t('help_requests_form.what_is_your_address') %>
 <%= error_message_for(@help_request, :address_coordinates) %>
 <%= f.text_field :address %>
 <%= f.hidden_field :address_lat, id: 'address-input-lat' %>
@@ -20,5 +20,5 @@
 <div id="google-map-container">
 </div>
 
-<%= f.label :description, 'What do you need?' %>
-<%= f.text_area :description, placeholder: "Give some context on your situation, and what you need from your local community.", rows: 5 %>
+<%= f.label :description, t('help_requests_form.what_do_you_need') %>
+<%= f.text_area :description, placeholder: t("help_requests_form.what_do_you_need_placeholder"), rows: 5 %>

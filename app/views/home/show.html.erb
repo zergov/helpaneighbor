@@ -1,22 +1,18 @@
-<h1>Help your neighbors</h1>
-<p>
-  Because of COVID-19, social distancing is required pretty much everywhere. Some quarantined people are stuck home, and might need help.
-  This website lets you ask for help in your local community.
-</p>
+<h1><%= t('home.title') %></h1>
+<p><%= t('home.site_description') %></p>
 <%= image_tag "social_distancing.svg", class: 'hero-image' %>
 
-<h2>Do you need help?</h2>
-<p>Here is how it works.</p>
+<h2><%= t('home.do_you_need_help') %></h2>
+<p><%= t('home.how_it_works') %></p>
 <ol>
-  <li>You create an help request, explaining who you are and how you need help</li>
-  <li>Your help request is shown on our map</li>
-  <li>A friendly neighbor notices your request, and starts helping you!</li>
+  <li><%= t('home.step1') %></li>
+  <li><%= t('home.step2') %></li>
+  <li><%= t('home.step3') %></li>
 </ol>
-<%= link_to "request help now", :new_help_request %>
+<%= link_to t('home.request_help_now'), :new_help_request %>
 <%= image_tag "cart.svg", class: 'hero-image' %>
 
-<h2>Do you want to help?</h2>
-<p>Great! We need more people like you in this time of crisis. Let's find out who needs help in your community.</p>
-<%= link_to "start helping now", :help_now %>
+<h2><%= t('home.do_you_want_to_help')%></h2>
+<p><%= t('home.do_you_want_to_help_call_to_action') %></p>
+<%= link_to t('home.start_helping_now'), :help_now %>
 <%= image_tag "neighborhood.svg", class: 'hero-image' %>
-

@@ -30,4 +30,52 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  create: "Create"
+  edit: "Edit"
+  security_number: "Security number"
+
+  home:
+    title: "Help your neighbor"
+    site_description: "Because of COVID-19, social distancing is required pretty much everywhere. Some quarantined people are stuck home, and might need help. This website lets you ask for help in your local community."
+    do_you_need_help: "Do you need help?"
+    how_it_works: "Here is how it works."
+    step1: "You create an help request, explaining who you are and how you need help"
+    step2: "Your help request is shown on our map"
+    step3: "A friendly neighbor notices your request, and starts helping you!"
+    request_help_now: "request help now"
+
+    do_you_want_to_help: "Do you want to help?"
+    do_you_want_to_help_call_to_action: "Great! We need more people like you in this time of crisis. Let's find out who needs help in your community."
+    start_helping_now: "start helping now"
+
+  help_now:
+    title: "Start helping now"
+    enter_address_below: "Enter your address below, and we will show you on the map who needs help in your surrounding."
+    where_do_you_live: "Where do you live?"
+
+  help_requests_new:
+    title: "Ask for help"
+    security_number_description: "This is the security number for this Help request. It allows you to update this request in the future, without having to create an account."
+    security_number_tldr: "In brief, if you know this number, we can verify that you are the owner of this request. Keep it somewhere safe!"
+
+  help_requests_show:
+    name: "Name"
+    special_conditions: "Special conditions"
+    what_this_person_needs: "What this person needs"
+    address: "Address"
+    edit: "edit this request"
+
+  help_requests_edit:
+    title: "Edit your help request"
+
+  help_requests_form:
+    what_is_your_name: "What is your name?"
+    do_you_have_conditions: "Do you have any special conditions?"
+    what_is_your_address: "What is your address?"
+    what_do_you_need: "What do you need?"
+    what_do_you_need_placeholder: "Give some context on your situation, and what you need from your local community."
+
+  help_requests_ask_security_number:
+    title: "Verify security number"
+    description_html: "For some reason, we cannot verify that you are the creator of this help request. <br/>When you created it, we showed you a <strong>security number</strong>. Please enter it here."
+    enter_security_number: "Enter the 6 digits security number"

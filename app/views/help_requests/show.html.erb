@@ -5,11 +5,11 @@
 }
 </style>
 
-<h2>Name</h2>
+<h2><%= t('help_requests_show.name') %></h2>
 <p class="capitalize"><%= @help_request.name %></p>
 
 <% unless @help_request.special_conditions.empty? %>
-  <h2>Special conditions</h2>
+  <h2><%= t('help_requests_show.special_conditions') %></h2>
   <% @help_request.special_conditions.each do |condition| %>
     <div class="special-condition">
       <span class="<%= condition.icon %>"></span>
@@ -17,16 +17,16 @@
   <% end %>
 <% end %>
 
-<h2>What this person needs</h2>
+<h2><%= t('help_requests_show.what_this_person_needs') %></h2>
 <p class="white-spaces"><%= @help_request.description %></p>
 
-<h2>Address</h2>
+<h2><%= t('help_requests_show.address') %></h2>
 <p><%= @help_request.address %></p>
 
 <div id="google-map-container">
 </div>
 
-<%= link_to "edit this request", edit_help_request_path(:id => @help_request.id) %>
+<%= link_to t("help_requests_show.edit"), edit_help_request_path(:id => @help_request.id) %>
 
 <input id="help-request-lat" type="hidden" value="<%= @help_request.address_lat %>">
 <input id="help-request-lon" type="hidden" value="<%= @help_request.address_lon %>">
