@@ -1,7 +1,7 @@
 <h1><%= t('help_requests_ask_security_number.title') %></h1>
 <p><%= t('help_requests_ask_security_number.description_html') %></p>
 <%= form_with(local: true) do |f| %>
-  <%= f.label :security_number %>
+  <%= f.label :security_number, t('security_number') %>
   <%= f.text_field :security_number, placeholder: t("help_requests_ask_security_number.enter_security_number") %>
-  <%= f.submit :submit %>
+  <%= f.submit t('submit') %>
 <% end %>
