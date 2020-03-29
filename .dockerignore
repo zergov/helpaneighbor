@@ -1,3 +1,8 @@
 .git
 .gitignore
 config/master.key
+build-images.sh
+docker-compose.yml
+Dockerfile
+Dockerfile.production
+README.md
