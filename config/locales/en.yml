@@ -32,7 +32,12 @@
 en:
   create: "Create"
   edit: "Edit"
+  submit: "Submit"
   security_number: "Security number"
+
+  navbar:
+    i_need_help: "I need help"
+    i_want_to_help: "I want to help"
 
   home:
     title: "Help your neighbor"

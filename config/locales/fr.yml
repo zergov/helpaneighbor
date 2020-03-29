@@ -1,0 +1,56 @@
+fr:
+  create: "Créer"
+  edit: "Modifier"
+  submit: "Envoyer"
+  security_number: "Numéro de sécurité"
+
+  navbar:
+    i_need_help: "J'ai besoin d'aide"
+    i_want_to_help: "Je veux aider"
+
+  home:
+    title: "Aide ton voisin"
+    site_description: "À cause du COVID-19, la distanciation sociale est requiert. Certaines personnes en quarantaine sont pris à la maison, sans pouvoir en sortir. Ce site vous permet de demander de l'aide dans votre communauté local."
+    do_you_need_help: "As tu besoin d'aide?"
+    how_it_works: "Voici comment ça fonctionne."
+    step1: "Tu créer une requête d'aide qui explique qui tu es et pourquoi tu as besoin d'aide"
+    step2: "Ta requête est affiché sur la carte du site"
+    step3: "Un de tes voisin remarque ta requête, et vient t'aider!"
+    request_help_now: "demande de l'aide maintenant!"
+
+    do_you_want_to_help: "Veux tu aider?"
+    do_you_want_to_help_call_to_action: "Parfait! Le monde a besoin de gens comme toi durant ce temps de crise. Trouvons qui a besoin d'aide dans ta communauté!"
+    start_helping_now: "commence à aider maintenant!"
+
+  help_now:
+    title: "Commence à aider maintenant!"
+    enter_address_below: "Entre ton addresse ici. Nous allons te montrer sur la carte qui a besoin d'aide près de chez toi."
+    where_do_you_live: "Où habitez-vous?"
+
+  help_requests_new:
+    title: "Demandez de l'aide"
+    security_number_description: "Ceci est le numéro de sécurité pour votre demande d'aide. Ce numéro vous permet de modifier votre requête dans le future, sans avoir à vous demander de créer un compte."
+    security_number_tldr: "En bref, si vous connaissez ce numéro, on peut vérifier que vous êtes le créateur de cette requête. N'oubliez pas ce numéro!"
+
+  help_requests_show:
+    name: "Nom de la personne"
+    special_conditions: "Conditions spéciales"
+    what_this_person_needs: "Ce que la personne a besoin"
+    address: "Addresse de la personne"
+    edit: "modifier cette requête"
+
+  help_requests_edit:
+    title: "Modifier votre requête d'aide"
+
+  help_requests_form:
+    what_is_your_name: "Quel est votre nom?"
+    do_you_have_conditions: "Avez vous une condition particulière?"
+    what_is_your_address: "Où habitez-vous?"
+    what_do_you_need: "Qu'avez vous besoin?"
+    what_do_you_need_placeholder: "Donnez du contexte sur votre situation actuel. Ce que vous avez besoin, comment vous rejoindre, avez vous le COVID-19, etc."
+
+  help_requests_ask_security_number:
+    title: "Vérification nécéssaire"
+    description_html: "Nous ne pouvons vérifier que vous êtes l'auteur de cette requête. <br/>Quand vous avez créé votre requête, nous vous avons montré un <strong>numéro de sécurité</strong>. Veuillez l'entrer ici."
+    enter_security_number: "Entrer le numéro de sécurité à 6 chiffres."
+
