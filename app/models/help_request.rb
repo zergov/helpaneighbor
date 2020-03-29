@@ -52,7 +52,7 @@ class HelpRequest < ApplicationRecord
   private
 
   def set_coordinates
-    address_lonlat = "POINT(#{address_lon} #{address_lat})" if address_lon && address_lat
+    self.address_lonlat = "POINT(#{address_lon} #{address_lat})" if address_lon && address_lat
   end
 
   def validate_address_has_coordinates
