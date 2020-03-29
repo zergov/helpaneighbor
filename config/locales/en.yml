@@ -64,7 +64,7 @@ en:
   help_requests_new:
     title: "Ask for help"
     security_number_description: "This is the security number for this Help request. It allows you to update this request in the future, without having to create an account."
-    security_number_tldr: "In brief, if you know this number, we can verify that you are the owner of this request. Keep it somewhere safe!"
+    security_number_tldr_html: "In brief, if you know this number, we can verify that you are the owner of this request. <strong>Keep it somewhere safe!</strong>"
     invalid_address: "The address is invalid"
     flash_created_success: "Your Help request has been created!"
     flash_creation_error: "Please, fill all the fields."

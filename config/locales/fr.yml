@@ -33,7 +33,7 @@ fr:
   help_requests_new:
     title: "Demandez de l'aide"
     security_number_description: "Ceci est le numéro de sécurité pour votre demande d'aide. Ce numéro vous permet de modifier votre requête dans le future, sans avoir à vous demander de créer un compte."
-    security_number_tldr: "En bref, si vous connaissez ce numéro, on peut vérifier que vous êtes l'auteur de cette requête. N'oubliez pas ce numéro!"
+    security_number_tldr_html: "En bref, si vous connaissez ce numéro, on peut vérifier que vous êtes l'auteur de cette requête. <strong>N'oubliez pas ce numéro!</strong>"
     invalid_address: "L'addresse est invalide"
     flash_created_success: "Votre requête a été créé!"
     flash_creation_error: "Veuillez remplir tous les champs."
