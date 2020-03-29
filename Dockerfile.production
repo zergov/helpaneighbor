@@ -17,6 +17,7 @@ COPY Gemfile.lock Gemfile.lock
 
 ENV RAILS_ENV production
 
+RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install
 
 COPY . .
