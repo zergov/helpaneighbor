@@ -6,10 +6,9 @@
 }
 </style>
 
-<%= image_tag "places.svg", class: 'hero-image' %>
 <h1>Start helping now</h1>
 <%= text_field_tag :address, nil, id: 'address-input', placeholder: 'Where do you live?' %>
-
+<%= image_tag "places.svg", class: 'hero-image', id: 'placeholder-image' %>
 <div id="google-map-container">
 </div>
 

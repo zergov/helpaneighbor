@@ -12,7 +12,8 @@ function infoWindowForRequest(request) {
 }
 
 (async () => {
-  const map = initGoogleMap("google-map-container")
+  let initialized = false;
+  let map;
 
   // Create the search box and link it to the UI element.
   const input = document.getElementById('address-input');
@@ -53,7 +54,7 @@ function infoWindowForRequest(request) {
   }
 
   let pnorth, psouth, peast, pwest, pzoom;
-  map.addListener('idle', () => {
+  function onMapIdle() {
     const center = map.getCenter()
     const zoom = map.getZoom()
     const position = {
@@ -82,10 +83,16 @@ function infoWindowForRequest(request) {
       peast = ne.lat(); pwest = sw.lat()
       pzoom = zoom
     }
-  })
+  }
 
   searchBox.addListener('places_changed', () => {
     var places = searchBox.getPlaces();
+
+    if (!initialized) {
+      map = initGoogleMap("google-map-container")
+      map.addListener('idle', onMapIdle)
+      $('#placeholder-image').hide()
+    }
 
     if (places.length == 0) return;
 
