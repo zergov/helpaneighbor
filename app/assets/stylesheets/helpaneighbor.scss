@@ -155,6 +155,11 @@ code {
   display: block;
   margin: 0 auto;
   max-width: 60%;
+  max-height: 50vh;
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
 }
 
 .white-spaces {
