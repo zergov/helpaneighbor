@@ -12,6 +12,7 @@
 <% end %>
 
 <%= f.label :address, 'What is your address?' %>
+<%= error_message_for(@help_request, :address_coordinates) %>
 <%= f.text_field :address %>
 <%= f.hidden_field :address_lat, id: 'address-input-lat' %>
 <%= f.hidden_field :address_lon, id: 'address-input-lng' %>

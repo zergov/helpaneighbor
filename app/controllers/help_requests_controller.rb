@@ -30,11 +30,7 @@ class HelpRequestsController < ApplicationController
     @help_request = HelpRequest.new(help_request_params_create)
     @help_request.creator_uuid = SecureRandom.uuid
 
-    longitude = @help_request.address_lon
-    latitude  = @help_request.address_lat
-    @help_request.address_lonlat = "POINT(#{longitude} #{latitude})"
-
-    if @help_request.save
+    if @help_request.valid? && @help_request.save
       set_creator_uuid_cookie(@help_request)
       flash.notice = "Your Help request has been created!"
       redirect_to @help_request

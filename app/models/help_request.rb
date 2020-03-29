@@ -4,12 +4,14 @@ class HelpRequest < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :description, presence: true
-  validates :address_lon, presence: true
-  validates :address_lat, presence: true
   validates :conditions, presence: true
   validates :security_number, presence: true, numericality: { only_integer: true }, length: { is: 6 }
   # validates :security_question, presence: true
   # validates :security_question_answer, presence: true
+
+  validate :validate_address_has_coordinates
+
+  before_save :set_coordinates
 
   def self.generate_security_number
     SecureRandom.random_number(10**6).to_s.rjust(6, '0')
@@ -47,5 +49,18 @@ class HelpRequest < ApplicationRecord
       address_lon: address_lon,
       conditions: special_conditions,
     }
+  end
+
+  private
+
+  def set_coordinates
+    address_lonlat = "POINT(#{address_lon} #{address_lat})" if address_lon && address_lat
+  end
+
+  def validate_address_has_coordinates
+    if address_lat.blank? || address_lon.blank?
+      errors.add(:address_coordinates, "invalid address")
+      errors.add(:address, "invalid address")
+    end
   end
 end
