@@ -1,24 +1,19 @@
 class HelpRequestsController < ApplicationController
+  before_action :load_help_request, only: [:show, :edit, :update, :confirm_security_number]
+  before_action :verify_ownership, only: [:edit, :update]
+
   def new
     @help_request = HelpRequest.new
     @help_request.security_number = HelpRequest.generate_security_number
   end
 
   def show
-    @help_request = HelpRequest.find(params[:id])
   end
 
   def edit
-    @help_request = HelpRequest.find(params[:id])
-    if @help_request.is_owner?(cookies[:creator_uuid])
-      render :edit
-    else
-      redirect_to help_request_confirm_security_number_path(id: @help_request.id)
-    end
   end
 
   def update
-    @help_request = HelpRequest.find(params[:id])
     if @help_request.update(help_request_params_update)
       redirect_to @help_request
     else
@@ -44,7 +39,6 @@ class HelpRequestsController < ApplicationController
   end
 
   def confirm_security_number
-    @help_request = HelpRequest.find(params[:id])
     if @help_request.validate_security_number(security_number_params[:security_number])
       set_creator_uuid_cookie(@help_request)
       redirect_to edit_help_request_path(id: @help_request.id)
@@ -55,6 +49,16 @@ class HelpRequestsController < ApplicationController
   end
 
   private
+
+  def load_help_request
+    @help_request = HelpRequest.find(params[:id])
+  end
+
+  def verify_ownership
+    unless @help_request.is_owner?(cookies[:creator_uuid])
+      redirect_to help_request_confirm_security_number_path(id: @help_request.id)
+    end
+  end
 
   def set_creator_uuid_cookie(help_request)
     cookies[:creator_uuid] = { value: @help_request.creator_uuid, expires: 1.month }
