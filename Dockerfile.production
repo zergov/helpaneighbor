@@ -23,6 +23,8 @@ RUN bundle install
 
 COPY . .
 
+VOLUME /helpaneighbor/public
+
 RUN RAILS_MASTER_KEY=${RAILS_MASTER_KEY} bin/rails assets:precompile
 RUN ls -la public/assets
 
