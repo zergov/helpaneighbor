@@ -9,7 +9,9 @@ fr:
     i_want_to_help: "Je veux aider"
 
   footer:
-    change_language: "Changer la langue"
+    change_language: "Langue"
+    built_by: "Codé par"
+    code_on: "Code source sur"
 
   home:
     title: "Aide ton voisin"

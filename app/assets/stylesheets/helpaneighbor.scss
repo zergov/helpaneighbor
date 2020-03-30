@@ -38,18 +38,13 @@ main {
 }
 
 footer {
+  font-size: 0.8em;
   position: absolute;
   bottom: 0;
   width: 100%;
   height: $footer_height;
   display: flex;
   justify-content: space-between;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 }
 
 label, input {

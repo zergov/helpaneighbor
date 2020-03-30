@@ -40,7 +40,9 @@ en:
     i_want_to_help: "I want to help"
 
   footer:
-    change_language: "Change language"
+    change_language: "Language"
+    built_by: "Built by"
+    code_on: "Code on"
 
   home:
     title: "Help your neighbor"
