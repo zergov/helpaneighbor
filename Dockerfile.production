@@ -1,5 +1,6 @@
 FROM ruby:2.6.5-alpine AS build-phase
 ENV RAILS_ENV production
+ENV BUNDLE_APP_CONFIG=/helpaneighbor/.bundle
 
 RUN apk update \
 && apk upgrade \
@@ -12,18 +13,20 @@ WORKDIR /helpaneighbor
 COPY Gemfile* package.json yarn.lock ./
 
 RUN bundle config --local build.sassc --disable-march-tune-native
-RUN bundle install --without development test
+RUN bundle config --global frozen 1
+RUN bundle install --path=vendor/bundle --without development test
 RUN yarn install
 
 COPY . .
 
 RUN SECRET_KEY_BASE=`bin/rake secret` bin/rake assets:precompile
-RUN rm -rf node_modules tmp/cache app/assets vendor/assets
+RUN rm -rf node_modules tmp/cache app/assets/images/* app/assets/fonts/* app/assets/stylesheets/* vendor/assets
 
 ####################################
 
 FROM ruby:2.6.5-alpine
 ENV RAILS_ENV production
+ENV BUNDLE_APP_CONFIG=/helpaneighbor/.bundle
 
 RUN apk update && apk upgrade && apk add --update --no-cache bash postgresql-dev nodejs tzdata
 
