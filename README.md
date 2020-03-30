@@ -1,5 +1,5 @@
 # Helpaneighbor.ca
-https://helpaneighbor.ca - App to advertise your needs in your local community during COVID-19
+https://helpaneighbor.ca - App to advertise your needs in your local community during COVID-19 crisis
 
 # How to run?
 1. Install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) on your machine.
