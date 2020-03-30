@@ -19,13 +19,13 @@ COPY Gemfile.lock Gemfile.lock
 ENV RAILS_ENV production
 
 RUN bundle config --local build.sassc --disable-march-tune-native
-RUN bundle install
+RUN bundle install --without development test
 
 COPY . .
 
+RUN RAILS_MASTER_KEY=${RAILS_MASTER_KEY} bin/rake assets:precompile
+RUN rm -rf node_modules
+
+EXPOSE 3000
 VOLUME /helpaneighbor/public
-
-RUN RAILS_MASTER_KEY=${RAILS_MASTER_KEY} bin/rails assets:precompile
-RUN ls -la public/assets
-
 CMD ["/bin/sh", "/helpaneighbor/docker-entrypoint.sh"]
