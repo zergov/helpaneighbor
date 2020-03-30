@@ -17,7 +17,7 @@ class HelpRequest < ApplicationRecord
 
   default_scope { where(deleted: false) }
   scope :within, -> (longitude, latitude, radius_km = 2) {
-    where("ST_Distance(address_lonlat, 'POINT(#{longitude} #{latitude})') < #{radius_km * 1000}")
+    where("ST_Distance(address_lonlat, 'POINT(? ?)') < ?", longitude.to_f, latitude.to_f, radius_km * 1000)
   }
 
   def special_conditions
