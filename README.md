@@ -11,3 +11,7 @@ https://helpaneighbor.ca - App to advertise your needs in your local community d
 It would be really nice to translate this site in many languages.
 You can take a look at the existing translations [here](https://github.com/zergov/helpaneighbor/tree/master/config/locales).
 Feel free to open a pull request with new translations!
+
+# Illustrations on the site
+The nice images you see on the site are from: https://undraw.co/
+Check it out, it's amazing!
