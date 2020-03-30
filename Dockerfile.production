@@ -1,4 +1,5 @@
 FROM ruby:2.6.5
+ARG RAILS_MASTER_KEY
 
 # install nodejs & yarn
 RUN apt-get update && apt-get install -y \
@@ -22,6 +23,7 @@ RUN bundle install
 
 COPY . .
 
-RUN yarn install --check-files
+RUN RAILS_MASTER_KEY=${RAILS_MASTER_KEY} bin/rails assets:precompile
+RUN ls -la public/assets
 
 CMD ["/bin/sh", "/helpaneighbor/docker-entrypoint.sh"]
