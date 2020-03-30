@@ -32,8 +32,11 @@
 en:
   create: "Create"
   edit: "Edit"
+  delete: "Delete"
   submit: "Submit"
   security_number: "Security number"
+
+
 
   navbar:
     i_need_help: "I need help"
@@ -80,6 +83,10 @@ en:
 
   help_requests_edit:
     title: "Edit your help request"
+    danger_zone: "Danger zone"
+    delete_description: "If your condition changed, and you don't need help anymore. You can delete this help request."
+    flash_delete_success: "Help request deleted!"
+    flash_delete_error: "We cannot delete this help request right now."
 
   help_requests_form:
     what_is_your_name: "What is your name?"

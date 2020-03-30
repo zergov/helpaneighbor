@@ -1,6 +1,7 @@
 fr:
   create: "Créer"
   edit: "Modifier"
+  delete: "Supprimer"
   submit: "Envoyer"
   security_number: "Numéro de sécurité"
 
@@ -49,6 +50,10 @@ fr:
 
   help_requests_edit:
     title: "Modifier votre requête d'aide"
+    danger_zone: "zone dangereuse"
+    delete_description: "Si votre condition a changé, et que vous n'avez plus besoin d'aide, vous pouvez toujours détruire cette requête."
+    flash_delete_success: "Votre requête d'aide à été supprimé!"
+    flash_delete_error: "Votre requête n'a pas pu être supprimé."
 
   help_requests_form:
     what_is_your_name: "Quel est votre nom?"

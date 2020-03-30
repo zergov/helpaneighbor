@@ -10,5 +10,9 @@
   <%= render partial: 'form', locals: {f: f} %>
   <%= f.submit t('edit') %>
 <% end %>
+<hr>
+<h2><%= t('help_requests_edit.danger_zone') %></h2>
+<p><%= t('help_requests_edit.delete_description') %></p>
+<%= link_to t('delete'), edit_help_request_path(:id => @help_request.id), class: "btn btn-danger", method: :delete %>
 
 <%= javascript_pack_tag 'help-requests-form' %>

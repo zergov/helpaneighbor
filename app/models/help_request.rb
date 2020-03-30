@@ -15,6 +15,7 @@ class HelpRequest < ApplicationRecord
     SecureRandom.random_number(10**6).to_s.rjust(6, '0')
   end
 
+  default_scope { where(deleted: false) }
   scope :within, -> (longitude, latitude, radius_km = 2) {
     where("ST_Distance(address_lonlat, 'POINT(#{longitude} #{latitude})') < #{radius_km * 1000}")
   }

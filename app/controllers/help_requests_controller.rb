@@ -1,6 +1,6 @@
 class HelpRequestsController < ApplicationController
-  before_action :load_help_request, only: [:show, :edit, :update, :confirm_security_number]
-  before_action :verify_ownership, only: [:edit, :update]
+  before_action :load_help_request, only: [:show, :edit, :update, :delete, :confirm_security_number]
+  before_action :verify_ownership, only: [:edit, :update, :delete]
 
   def new
     @help_request = HelpRequest.new
@@ -18,6 +18,17 @@ class HelpRequestsController < ApplicationController
       redirect_to @help_request
     else
       render :edit
+    end
+  end
+
+  def delete
+    @help_request.deleted = true
+    if @help_request.save
+      flash.notice = I18n.t("help_requests_edit.flash_delete_success")
+      redirect_to :homepage
+    else
+      flash.alert = I18n.t("help_requests_edit.flash_delete_error")
+      redirect_to edit_help_request_path(id: @help_request.id)
     end
   end
 

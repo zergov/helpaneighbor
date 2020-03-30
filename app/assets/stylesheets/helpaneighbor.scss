@@ -68,21 +68,34 @@ textarea {
   resize: vertical;
 }
 
+.btn,
 input[type=submit] {
+  display: inline-block;
   font-weight: bold;
   border: 1px solid #ccc;
   border-radius: 4px;
   line-height: inherit;
   background-color: white;
-  padding: 0.8rem;
+  padding: 10px 12px;
+  line-height: 20px;
+  font-weight: 600;
   cursor: pointer;
 
   &:hover {
     background: $color_text;
     color: white;
   }
+
 }
 
+.btn-danger {
+  color: $color_danger;
+  &:hover {
+    background: $color_danger;
+    color: white;
+    border: 1px solid #ccc;
+  }
+}
 code {
   padding: 0.8rem;
   font-size: 2rem!important;
@@ -108,6 +121,7 @@ code {
 #container {
   max-width: 60rem;
   margin: 0 auto;
+  margin-bottom: 1em;
   padding-bottom: $footer_height;
 }
 
