@@ -24,7 +24,7 @@ fr:
     step3: "Un de tes voisin remarque ta requête, et vient t'aider!"
     request_help_now: "demande de l'aide maintenant!"
 
-    do_you_want_to_help: "Veux tu aider?"
+    do_you_want_to_help: "Veux-tu aider?"
     do_you_want_to_help_call_to_action: "Parfait! Le monde a besoin de gens comme toi durant ce temps de crise. Trouvons qui a besoin d'aide dans ta communauté!"
     start_helping_now: "commence à aider maintenant!"
 
@@ -57,10 +57,10 @@ fr:
 
   help_requests_form:
     what_is_your_name: "Quel est votre nom?"
-    do_you_have_conditions: "Avez vous une condition particulière?"
+    do_you_have_conditions: "Avez-vous une condition particulière?"
     what_is_your_address: "Où habitez-vous?"
-    what_do_you_need: "Qu'avez vous besoin?"
-    what_do_you_need_placeholder: "Donnez du contexte sur votre situation actuel. Ce que vous avez besoin, comment vous rejoindre, avez vous le COVID-19, etc."
+    what_do_you_need: "Qu'avez-vous besoin?"
+    what_do_you_need_placeholder: "Donnez du contexte sur votre situation actuel. Ce que vous avez besoin, comment vous rejoindre, avez-vous le COVID-19, etc."
 
   help_requests_ask_security_number:
     title: "Vérification nécéssaire"
