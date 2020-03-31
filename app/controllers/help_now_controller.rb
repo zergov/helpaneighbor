@@ -18,7 +18,14 @@ class HelpNowController < ApplicationController
 
   def confirm_subscription_email
     @email_notification_subscription = EmailNotificationSubscription.find_by(confirmation_uuid: params[:uuid])
-    if @email_notification_subscription && @email_notification_subscription.update(confirmed: true)
+
+    unless @email_notification_subscription
+      flash.alert = "Invalid confirmation link"
+      redirect_to :homepage
+      return
+    end
+
+    if !@email_notification_subscription.confirmed && @email_notification_subscription.update(confirmed: true)
       flash.notice = "You're in! We will send you an email when someone needs help near you!"
       redirect_to :homepage
     else
