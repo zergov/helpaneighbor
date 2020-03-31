@@ -69,4 +69,10 @@ fr:
     flash_error: "Mauvais numéro de sécurité"
 
   email_subscription:
+    flash_success_verify_email: "Confirmez votre email via le lien de confirmation que nous vous avons envoyé"
+    flash_error_check_form: "Vérifiez que les addresses soient valide."
+    flash_email_already_confirmed: "Ce email a déjà été confirmé!"
+    flash_email_confirmation_success: "Email confirmé! Nous vous enverrons un email quand quelqu'un a besoin d'aide près de vous!"
+    flash_email_could_not_confirm: "Oops! Impossible de confirmer votre email"
     confirmation_subject: "Confirmez votre address email"
+

@@ -8,10 +8,10 @@ class HelpNowController < ApplicationController
     @email_notification_subscription.confirmation_uuid = SecureRandom.uuid
 
     if @email_notification_subscription.valid? && @email_notification_subscription.save
-      flash.notice = "Success! Verify your email"
+      flash.notice = I18n.t("email_subscription.flash_success_verify_email")
       redirect_to :help_now
     else
-      flash.notice = "Make sure the address and the email is valid"
+      flash.alert = I18n.t("email_subscription.flash_error_check_form")
       redirect_to :help_now
     end
   end
@@ -19,17 +19,17 @@ class HelpNowController < ApplicationController
   def confirm_subscription_email
     @email_notification_subscription = EmailNotificationSubscription.find_by(confirmation_uuid: params[:uuid])
 
-    unless @email_notification_subscription
-      flash.alert = "Invalid confirmation link"
+    if @email_notification_subscription && @email_notification_subscription.confirmed
+      flash.alert = I18n.t("email_subscription.flash_email_already_confirmed")
       redirect_to :homepage
       return
     end
 
-    if !@email_notification_subscription.confirmed && @email_notification_subscription.update(confirmed: true)
-      flash.notice = "You're in! We will send you an email when someone needs help near you!"
+    if @email_notification_subscription && @email_notification_subscription.update(confirmed: true)
+      flash.notice = I18n.t("email_subscription.flash_email_confirmation_success")
       redirect_to :homepage
     else
-      flash.alert = "Something went wrong! We could not confirm your email address."
+      flash.alert = I18n.t("email_subscription.flash_email_could_not_confirm")
       redirect_to :homepage
     end
   end

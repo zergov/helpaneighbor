@@ -102,4 +102,10 @@ en:
     flash_error: "wrong security number"
 
   email_subscription:
+    flash_success_verify_email: "Please, confirm your email via the confirmation email we just sent you."
+    flash_error_check_form: "Make sure the address and the email is valid"
+    flash_email_already_confirmed: "This email is already confirmed!"
+    flash_email_confirmation_success: "You're in! We will send you an email when someone needs help near you!"
+    flash_email_could_not_confirm: "Something went wrong! We could not confirm your email address."
     confirmation_subject: "Confirm your email address"
+
