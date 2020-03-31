@@ -15,7 +15,7 @@ class HelpRequestsController < ApplicationController
 
   def update
     if @help_request.update(help_request_params_update)
-      redirect_to @help_request
+      redirect_to help_request_path(uuid: @help_request.uuid)
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class HelpRequestsController < ApplicationController
       redirect_to :homepage
     else
       flash.alert = I18n.t("help_requests_edit.flash_delete_error")
-      redirect_to edit_help_request_path(id: @help_request.id)
+      redirect_to edit_help_request_path(uuid: @help_request.uuid)
     end
   end
 
@@ -37,9 +37,11 @@ class HelpRequestsController < ApplicationController
     @help_request.creator_uuid = SecureRandom.uuid
 
     if @help_request.valid? && @help_request.save
+      @help_request.reload
       set_creator_uuid_cookie(@help_request)
+
       flash.notice = I18n.t("help_requests_new.flash_created_success")
-      redirect_to @help_request
+      redirect_to help_request_path(uuid: @help_request.uuid)
     else
       flash.alert = I18n.t("help_requests_new.flash_creation_error")
       render :new
@@ -52,7 +54,7 @@ class HelpRequestsController < ApplicationController
   def confirm_security_number
     if @help_request.validate_security_number(security_number_params[:security_number])
       set_creator_uuid_cookie(@help_request)
-      redirect_to edit_help_request_path(id: @help_request.id)
+      redirect_to edit_help_request_path(uuid: @help_request.uuid)
     else
       flash.alert = I18n.t("help_requests_ask_security_number.flash_error")
       render :ask_security_number
@@ -62,12 +64,12 @@ class HelpRequestsController < ApplicationController
   private
 
   def load_help_request
-    @help_request = HelpRequest.find(params[:id])
+    @help_request = HelpRequest.find_by!(uuid: params[:uuid])
   end
 
   def verify_ownership
     unless @help_request.is_owner?(cookies[:creator_uuid])
-      redirect_to help_request_confirm_security_number_path(id: @help_request.id)
+      redirect_to help_request_confirm_security_number_path(uuid: @help_request.uuid)
     end
   end
 

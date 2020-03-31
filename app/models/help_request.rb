@@ -41,6 +41,7 @@ class HelpRequest < ApplicationRecord
   def as_json(options = {})
     {
       id: id,
+      uuid: uuid,
       name: name,
       description: description,
       address: address,

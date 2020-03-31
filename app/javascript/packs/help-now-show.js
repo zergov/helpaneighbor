@@ -6,7 +6,7 @@ function infoWindowForRequest(request) {
     <h2 class="capitalize">${request.name}</h2>
     <strong>${request.address}</strong>
     <p class="white-spaces">${request.description}</p>
-    <a href="/help-requests/${request.id}">more info</a>
+    <a href="/help-requests/${request.uuid}">more info</a>
   </div>
   `
 }
