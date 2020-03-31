@@ -7,11 +7,11 @@ class HelpNowController < ApplicationController
     @email_notification_subscription = EmailNotificationSubscription.new(email_notification_subscription_params)
     @email_notification_subscription.confirmation_uuid = SecureRandom.uuid
 
-    if @email_notification_subscription.save
+    if @email_notification_subscription.valid? && @email_notification_subscription.save
       flash.notice = "Success! Verify your email"
       redirect_to :help_now
     else
-      flash.notice = "Error!"
+      flash.notice = "Make sure the address and the email is valid"
       redirect_to :help_now
     end
   end
