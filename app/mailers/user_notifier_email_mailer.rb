@@ -11,9 +11,13 @@ class UserNotifierEmailMailer < ApplicationMailer
 
   def send_new_help_request_near_you_notification(help_request)
     @help_request = help_request
+    longitude = @help_request.address_lon
+    latitude = @help_request.address_lat
+    email_notifications = EmailNotificationSubscription.confirmed.within(longitude, latitude)
+
     mail({
       subject: "helpaneighbor.ca - Someone needs help near you!",
-      bcc: ["lalandej.gg@gmail.com"],
+      bcc: email_notifications.map(&:email),
     })
   end
 end
