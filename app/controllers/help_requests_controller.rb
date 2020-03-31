@@ -39,6 +39,7 @@ class HelpRequestsController < ApplicationController
     if @help_request.valid? && @help_request.save
       set_creator_uuid_cookie(@help_request)
       flash.notice = I18n.t("help_requests_new.flash_created_success")
+      UserNotifierEmailMailer.send_new_help_request_near_you_notification(@help_request).deliver
       redirect_to @help_request
     else
       flash.alert = I18n.t("help_requests_new.flash_creation_error")
