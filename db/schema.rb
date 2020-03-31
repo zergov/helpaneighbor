@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_200054) do
+ActiveRecord::Schema.define(version: 2020_03_31_202324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 2020_03_31_200054) do
     t.geography "address_lonlat", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "confirmed", default: false
+    t.string "confirmation_uuid"
     t.index ["address_lonlat"], name: "index_email_notification_subscriptions_on_address_lonlat", using: :gist
+    t.index ["confirmed"], name: "index_email_notification_subscriptions_on_confirmed"
   end
 
   create_table "help_requests", force: :cascade do |t|
