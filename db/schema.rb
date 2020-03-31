@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_195524) do
+ActiveRecord::Schema.define(version: 2020_03_31_225728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+  enable_extension "uuid-ossp"
 
   create_table "help_requests", force: :cascade do |t|
     t.string "name"
@@ -29,8 +30,10 @@ ActiveRecord::Schema.define(version: 2020_03_30_195524) do
     t.string "security_number"
     t.string "creator_uuid"
     t.boolean "deleted", default: false
+    t.uuid "uuid", default: -> { "uuid_generate_v4()" }, null: false
     t.index ["address_lonlat"], name: "index_help_requests_on_address_lonlat", using: :gist
     t.index ["deleted"], name: "index_help_requests_on_deleted"
+    t.index ["uuid"], name: "index_help_requests_on_uuid"
   end
 
 end
