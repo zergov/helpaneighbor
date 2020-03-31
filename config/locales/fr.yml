@@ -74,5 +74,8 @@ fr:
     flash_email_already_confirmed: "Ce email a déjà été confirmé!"
     flash_email_confirmation_success: "Email confirmé! Nous vous enverrons un email quand quelqu'un a besoin d'aide près de vous!"
     flash_email_could_not_confirm: "Oops! Impossible de confirmer votre email"
-    confirmation_subject: "Confirmez votre address email"
+    confirmation_subject: "Confirmez votre addresse email"
+    confirmation_email_header: "Vous avez demandé d'être notifié quand une nouvelle demande d'aide est créer sur https://helpaneigbor.ca près de l'addresse suivante."
+    confirmation_email_description: "Une fois que votre email est confirmé, vous recevrez un email chaque fois qu'une nouvelle requête est créer près de cette addresse."
+    confirm_call_to_action: "Confirme ton addresse email"
 

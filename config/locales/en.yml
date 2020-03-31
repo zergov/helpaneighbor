@@ -108,4 +108,6 @@ en:
     flash_email_confirmation_success: "You're in! We will send you an email when someone needs help near you!"
     flash_email_could_not_confirm: "Something went wrong! We could not confirm your email address."
     confirmation_subject: "Confirm your email address"
-
+    confirmation_email_header: "You asked to be notified when a new help request is created on https://helpaneighbor.ca near the following address."
+    confirmation_email_description: "Once your email address is confirmed, we will send you an email anytime a new help request is created near this location."
+    confirm_call_to_action: "Confirm your email"

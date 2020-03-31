@@ -4,8 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Confirm your email address</h1>
-    <p>Once your email address is confirmed, we will send you an email anytime a new help request is created near: <%= @email_notification_subscription.address %></p>
-    <%= link_to "Confirm your email", help_now_confirm_subscription_email_url(uuid: @email_notification_subscription.confirmation_uuid) %>
+    <h1><%= t('email_subscription.confirmation_subject') %></h1>
+    <p><%= t('email_subscription.confirmation_email_header') %></p>
+    <strong><%= @email_notification_subscription.address %></strong>
+    <p> <%= t('email_subscription.confirmation_email_description') %> </p>
+
+    <%= link_to t('email_subscription.confirm_call_to_action'), help_now_confirm_subscription_email_url(uuid: @email_notification_subscription.confirmation_uuid) %>
   </body>
 </html>

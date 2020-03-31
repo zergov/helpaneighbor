@@ -4,7 +4,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hey! Someone new in your community needs help!</h1>
-    <p>You can see the request <%= link_to "here", help_request_url(id: @help_request.id) %></p>
+    <h1>Someone created a new help request near you!</h1>
+    <p>
+      <strong><%= @help_request.name %></strong> just created a <%= link_to "help request", help_request_url(id: @help_request.id) %> <br />
+      Don't forget to wash your hand!
+    </p>
+
+    <strong>helpaneighbor.ca</strong>
   </body>
 </html>
