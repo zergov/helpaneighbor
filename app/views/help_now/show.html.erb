@@ -11,14 +11,17 @@
 <%= text_field_tag :address, nil, id: 'address-input', placeholder: t('help_now.where_do_you_live') %>
 <%= image_tag "places.svg", class: 'hero-image', id: 'placeholder-image' %>
 
-<%= form_with(model: @email_notification_subscription, url: :help_now_subscribe, local: true, id: 'email-subscription-form') do |f| %>
-  <%= f.label :email, t('help_now.subscription_email_field') %>
-  <%= f.email_field :email %>
-  <%= f.hidden_field :address %>
-  <%= f.hidden_field :address_lat %>
-  <%= f.hidden_field :address_lon %>
-  <%= f.submit "get notified" %>
-<% end %>
+<div id="email-subscription-form">
+  <h5><%= t('help_now.subscription_header') %></h5>
+  <p><%= t('help_now.subscription_desc') %></p>
+  <%= form_with(model: @email_notification_subscription, url: :help_now_subscribe, local: true) do |f| %>
+    <%= f.email_field :email, placeholder: t('help_now.subscription_email_field') %>
+    <%= f.hidden_field :address %>
+    <%= f.hidden_field :address_lat %>
+    <%= f.hidden_field :address_lon %>
+    <%= f.submit t('submit') %>
+  <% end %>
+</div>
 
 <div id="google-map-container">
 </div>

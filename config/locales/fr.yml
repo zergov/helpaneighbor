@@ -32,6 +32,9 @@ fr:
     title: "Commence à aider maintenant!"
     enter_address_below: "Entre ton addresse ici. Nous allons te montrer sur la carte qui a besoin d'aide près de chez toi."
     where_do_you_live: "Où habitez-vous?"
+    subscription_email_field: "Entre ton email ici"
+    subscription_header: "Nous pouvons vous notifier!"
+    subscription_desc: "Si vous le voulez, nous pouvons vous envoyer un email lorsqu'une nouvelle demande d'aide est créé pres de cette addresse."
 
   help_requests_new:
     title: "Demandez de l'aide"

@@ -65,6 +65,9 @@ en:
     title: "Start helping now"
     enter_address_below: "Enter your address below, and we will show you on the map who needs help in your surrounding."
     where_do_you_live: "Where do you live?"
+    subscription_email_field: "Enter your email address"
+    subscription_header: "We can notify you!"
+    subscription_desc: "If you want, we can send you an email when someone needs help near this location."
 
   help_requests_new:
     title: "Ask for help"
