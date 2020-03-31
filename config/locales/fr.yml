@@ -16,12 +16,12 @@ fr:
 
   home:
     title: "Aide ton voisin"
-    site_description: "À cause du COVID-19, la distanciation sociale est requise. Certaines personnes en quarantaine sont prises à la maison, sans pouvoir en sortir. Ce site vous permet de demander de l'aide dans votre communauté local."
+    site_description: "À cause du COVID-19, la distanciation sociale est requise. Certaines personnes en quarantaine sont prises à la maison, sans pouvoir en sortir. Ce site vous permet de demander de l'aide dans votre communauté locale."
     do_you_need_help: "As tu besoin d'aide?"
     how_it_works: "Voici comment ça fonctionne."
-    step1: "Tu créer une requête d'aide qui explique qui tu es et pourquoi tu as besoin d'aide"
-    step2: "Ta requête est affiché sur la carte du site"
-    step3: "Un de tes voisin remarque ta requête, et vient t'aider!"
+    step1: "Tu crées une requête d'aide qui explique qui tu es et pourquoi tu as besoin d'aide"
+    step2: "Ta requête est affichée sur la carte du site"
+    step3: "Un de tes voisins remarque ta requête, et vient t'aider!"
     request_help_now: "demande de l'aide maintenant!"
 
     do_you_want_to_help: "Veux-tu aider?"
@@ -60,7 +60,7 @@ fr:
     do_you_have_conditions: "Avez-vous une condition particulière?"
     what_is_your_address: "Où habitez-vous?"
     what_do_you_need: "Qu'avez-vous besoin?"
-    what_do_you_need_placeholder: "Donnez du contexte sur votre situation actuel. Ce que vous avez besoin, comment vous rejoindre, avez-vous le COVID-19, etc."
+    what_do_you_need_placeholder: "Donnez du contexte sur votre situation actuelle. Ce que vous avez besoin, comment vous rejoindre, avez-vous le COVID-19, etc."
 
   help_requests_ask_security_number:
     title: "Vérification nécéssaire"
