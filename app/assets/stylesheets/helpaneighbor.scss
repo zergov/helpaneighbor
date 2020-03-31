@@ -55,6 +55,7 @@ label, input {
   margin-bottom: $inputs_margin_bottom;
 }
 
+input[type=email],
 input[type=text], select, textarea, {
   padding: 0.4em;
   margin-top: $inputs_margin_top;

@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   get '/help-now', to: 'help_now#show'
   get '/help-now/search', to: 'help_now#search'
+  post '/help-now/subscribe', to: 'help_now#subscribe', as: :help_now_subscribe
 end

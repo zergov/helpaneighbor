@@ -1,5 +1,6 @@
 class HelpNowController < ApplicationController
   def show
+    @email_notification_subscription = EmailNotificationSubscription.new
   end
 
   def search
