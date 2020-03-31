@@ -92,6 +92,7 @@ function infoWindowForRequest(request) {
       map = initGoogleMap("google-map-container")
       map.addListener('idle', onMapIdle)
       $('#placeholder-image').hide()
+      $('#email-subscription-form').show()
     }
 
     if (places.length == 0) return;
@@ -101,6 +102,10 @@ function infoWindowForRequest(request) {
       lat: place.geometry.location.lat(),
       lng: place.geometry.location.lng(),
     }
+
+    // set email subscription form's coordinates
+    document.getElementById('email_notification_subscription_address_lat').value = position.lat;
+    document.getElementById('email_notification_subscription_address_lon').value = position.lng;
 
     // clear existing markers and clear opened info window
     if (currentInfoWindow) currentInfoWindow.close()
