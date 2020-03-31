@@ -67,3 +67,6 @@ fr:
     description_html: "Nous ne pouvons vérifier que vous êtes l'auteur de cette requête. <br/>Quand vous avez créé votre requête, nous vous avons montré un <strong>numéro de sécurité</strong>. Veuillez l'entrer ici."
     enter_security_number: "Entrer le numéro de sécurité à 6 chiffres."
     flash_error: "Mauvais numéro de sécurité"
+
+  email_subscription:
+    confirmation_subject: "Confirmez votre address email"

@@ -100,3 +100,6 @@ en:
     description_html: "For some reason, we cannot verify that you are the creator of this help request. <br/>When you created it, we showed you a <strong>security number</strong>. Please enter it here."
     enter_security_number: "Enter the 6 digits security number"
     flash_error: "wrong security number"
+
+  email_subscription:
+    confirmation_subject: "Confirm your email address"

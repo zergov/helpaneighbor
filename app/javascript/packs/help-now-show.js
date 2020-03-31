@@ -104,6 +104,7 @@ function infoWindowForRequest(request) {
     }
 
     // set email subscription form's coordinates
+    document.getElementById('email_notification_subscription_address').value = place.formatted_address;
     document.getElementById('email_notification_subscription_address_lat').value = position.lat;
     document.getElementById('email_notification_subscription_address_lon').value = position.lng;
 

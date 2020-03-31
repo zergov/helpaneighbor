@@ -14,6 +14,7 @@
 <%= form_with(model: @email_notification_subscription, url: :help_now_subscribe, local: true, id: 'email-subscription-form') do |f| %>
   <%= f.label :email, t('help_now.subscription_email_field') %>
   <%= f.email_field :email %>
+  <%= f.hidden_field :address %>
   <%= f.hidden_field :address_lat %>
   <%= f.hidden_field :address_lon %>
   <%= f.submit "get notified" %>

@@ -29,6 +29,6 @@ class HelpNowController < ApplicationController
   private
 
   def email_notification_subscription_params
-    params.require(:email_notification_subscription).permit(:email, :address_lon, :address_lat)
+    params.require(:email_notification_subscription).permit(:email, :address_lon, :address_lat, :address)
   end
 end
