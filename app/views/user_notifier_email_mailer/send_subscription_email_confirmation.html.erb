@@ -6,6 +6,6 @@
   <body>
     <h1>Confirm your email address</h1>
     <p>Once your email address is confirmed, we will send you an email anytime a new help request is created near: <%= @email_notification_subscription.address %></p>
-    <p>TODO: link to confirm</p>
+    <%= link_to "Confirm your email", help_now_confirm_subscription_email_url(uuid: @email_notification_subscription.confirmation_uuid) %>
   </body>
 </html>

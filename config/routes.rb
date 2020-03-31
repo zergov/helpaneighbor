@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get     '/help-requests/:id/confirm-security-number', to: 'help_requests#ask_security_number', as: :help_request_confirm_security_number
   post    '/help-requests/:id/confirm-security-number', to: 'help_requests#confirm_security_number'
 
-  get '/help-now', to: 'help_now#show'
-  get '/help-now/search', to: 'help_now#search'
-  post '/help-now/subscribe', to: 'help_now#subscribe', as: :help_now_subscribe
+  get   '/help-now', to: 'help_now#show'
+  get   '/help-now/search', to: 'help_now#search'
+  post  '/help-now/subscribe', to: 'help_now#subscribe', as: :help_now_subscribe
+  get   '/help-now/subscribe/confirmation/:uuid', to: 'help_now#confirm_subscription_email', as: :help_now_confirm_subscription_email
 end
