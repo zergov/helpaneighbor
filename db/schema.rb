@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_195524) do
+ActiveRecord::Schema.define(version: 2020_03_31_200054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "email_notification_subscriptions", force: :cascade do |t|
+    t.string "email"
+    t.string "address_lon"
+    t.string "address_lat"
+    t.geography "address_lonlat", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["address_lonlat"], name: "index_email_notification_subscriptions_on_address_lonlat", using: :gist
+  end
 
   create_table "help_requests", force: :cascade do |t|
     t.string "name"
